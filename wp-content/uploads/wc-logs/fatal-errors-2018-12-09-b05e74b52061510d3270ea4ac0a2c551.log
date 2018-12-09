@@ -1,0 +1,33 @@
+2018-12-09T09:46:13+00:00 CRITICAL Uncaught Error: Call to undefined function eightstore_lite_woocommerce_cart_menu() in C:\xampp\htdocs\ict\wp-content\themes\eightstore-lite\template-boxedhome.php:138
+Stack trace:
+#0 C:\xampp\htdocs\ict\wp-includes\template-loader.php(74): include()
+#1 C:\xampp\htdocs\ict\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ict\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\ict\wp-content\themes\eightstore-lite\template-boxedhome.php on line 138
+
+2018-12-09T09:48:15+00:00 CRITICAL Uncaught Error: Call to undefined function eightstore_lite_woocommerce_cart_menu() in C:\xampp\htdocs\ict\wp-content\themes\eightstore-lite\template-boxedhome.php:138
+Stack trace:
+#0 C:\xampp\htdocs\ict\wp-includes\template-loader.php(74): include()
+#1 C:\xampp\htdocs\ict\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ict\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\ict\wp-content\themes\eightstore-lite\template-boxedhome.php on line 138
+
+2018-12-09T09:49:55+00:00 CRITICAL Uncaught Error: Call to undefined function eightstore_lite_woocommerce_cart_menu() in C:\xampp\htdocs\ict\wp-content\themes\eightstore-lite\template-boxedhome.php:138
+Stack trace:
+#0 C:\xampp\htdocs\ict\wp-includes\template-loader.php(74): include()
+#1 C:\xampp\htdocs\ict\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ict\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\ict\wp-content\themes\eightstore-lite\template-boxedhome.php on line 138
+
+2018-12-09T13:42:37+00:00 CRITICAL Uncaught Error: Call to undefined method eightstore_lite_About_Theme::eightstore_lite_call_plugin_api() in C:\xampp\htdocs\ict\wp-content\themes\eightstore-lite\welcome\eightstore_lite_about.php:432
+Stack trace:
+#0 C:\xampp\htdocs\ict\wp-includes\class-wp-hook.php(286): eightstore_lite_About_Theme->eightstore_lite_plugin_activation_callback('')
+#1 C:\xampp\htdocs\ict\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\ict\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\ict\wp-admin\admin-ajax.php(99): do_action('wp_ajax_eightst...')
+#4 {main}
+  thrown in C:\xampp\htdocs\ict\wp-content\themes\eightstore-lite\welcome\eightstore_lite_about.php on line 432
+
