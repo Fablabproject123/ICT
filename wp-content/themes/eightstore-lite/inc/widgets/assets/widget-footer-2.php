@@ -34,7 +34,9 @@ if(is_woocommerce_available()):
         }
 
         public function widget($args, $instance){
-
+            ?>
+                  <?php echo the_field('title', 'widget_' . $args['widget_id']); ?>
+        <?php
         }
 
         /**

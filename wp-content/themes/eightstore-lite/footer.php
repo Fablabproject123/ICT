@@ -18,7 +18,9 @@
 		?>
 		<section id="section-footer" class="clear">
 			<div class="store-wrapper">
+                <div class="row">
 				<?php dynamic_sidebar('footer-2'); ?>
+                </div>
 			</div>
 		</section>
 		<?php

@@ -5,19 +5,22 @@
  *
  * @package 8Store Lite
  */
-if(is_woocommerce_available()):
+if (is_woocommerce_available()):
     add_action('widgets_init', 'eightstore_lite_register_footer_1_widget');
 
-    function eightstore_lite_register_footer_1_widget(){ //functions start from here
+    function eightstore_lite_register_footer_1_widget()
+    { //functions start from here
         register_widget('Eightstore_lite_footer_1');
     }
 
-    class Eightstore_lite_footer_1 extends WP_Widget {
+    class Eightstore_lite_footer_1 extends WP_Widget
+    {
         /**
          * Register Widget with Wordpress
          *
          */
-        public function __construct() {
+        public function __construct()
+        {
             parent::__construct(
                 'eightstore_lite_footer_1', 'ES: Footer 1', array(
                     'description' => __('Footer 1', 'eightstore-lite')
@@ -29,15 +32,22 @@ if(is_woocommerce_available()):
          * Helper function that holds widget fields
          * Array is used in update and form functions
          */
-        private function widget_fields() {
+        private function widget_fields()
+        {
             return;
         }
 
-        public function widget($args, $instance){
-            the_field('email', 'widget_' . $args['widget_id']);
+        public function widget($args, $instance)
+        {
+            ?>
+            <div class="col-4">
+
+            </div>
+            <?php
         }
 
-        public function update($new_instance, $old_instance) {
+        public function update($new_instance, $old_instance)
+        {
             $instance = $old_instance;
 
             $widget_fields = $this->widget_fields();
@@ -57,13 +67,14 @@ if(is_woocommerce_available()):
         /**
          * Back-end widget form.
          *
-         * @see WP_Widget::form()
+         * @see     WP_Widget::form()
          *
-         * @param	array $instance Previously saved values from database.
+         * @param    array $instance Previously saved values from database.
          *
-         * @uses	eightstore_lite_widgets_show_widget_field()		defined in widget-fields.php
+         * @uses    eightstore_lite_widgets_show_widget_field()        defined in widget-fields.php
          */
-        public function form($instance) {
+        public function form($instance)
+        {
 
         }
     }
