@@ -190,8 +190,10 @@ function eightstore_lite_scripts() {
 	
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 
+	wp_enqueue_style('eightstore-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
+
 	wp_enqueue_style( 'eightstore-animate', get_template_directory_uri() . '/css/animate.css');
-	
+
 	wp_enqueue_style( 'eightstore-slick', get_template_directory_uri() . '/css/slick.css');
 
 	wp_enqueue_style( 'eightstore-fancybox', get_template_directory_uri() . '/css/fancybox.css');
@@ -210,7 +212,9 @@ function eightstore_lite_scripts() {
 
 	wp_enqueue_script( 'eightstore-wow', get_template_directory_uri() . '/js/wow.min.js',array(),'1.1.2',true);
 
-	wp_enqueue_script( 'eightstore-slick-js', get_template_directory_uri() . '/js/slick.js', array(), '1.5.0', true );
+	wp_enqueue_script( 'eightstore-slick-js', get_template_directory_uri() . '/js/slick.js', array("jquery"), '1.5.0', true );
+
+	wp_enqueue_script( 'eightstore-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array("jquery"), '1.5.0', true );
 
 
 	wp_enqueue_script( 'eightstore-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
