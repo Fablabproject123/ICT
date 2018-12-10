@@ -1,0 +1,9 @@
+2018-12-10T09:00:29+00:00 CRITICAL Uncaught Error: Call to undefined method eightstore_lite_About_Theme::eightstore_lite_call_plugin_api() in C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\welcome\eightstore_lite_about.php:432
+Stack trace:
+#0 C:\xampp\htdocs\ICT\wp-includes\class-wp-hook.php(286): eightstore_lite_About_Theme->eightstore_lite_plugin_activation_callback('')
+#1 C:\xampp\htdocs\ICT\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\ICT\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\ICT\wp-admin\admin-ajax.php(99): do_action('wp_ajax_eightst...')
+#4 {main}
+  thrown in C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\welcome\eightstore_lite_about.php on line 432
+

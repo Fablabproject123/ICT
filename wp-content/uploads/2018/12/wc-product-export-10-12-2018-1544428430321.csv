@@ -1,0 +1,14 @@
+﻿ID,Loại,"Mã sản phẩm",Tên,"Đã đăng","Nhãn nổi bật?","Hiển thị trong danh mục","Mô tả ngắn","Mô tả","Ngày bắt đầu giảm giá","Ngày kết thúc giảm giá","Trạng thái thuế","Lớp thuế","Còn hàng?",Kho,"Low stock amount","Cho phép đặt trước?","Bán riêng?","Cân nặng (kg)","Độ dài (cm)","Độ rộng (cm)","Chiều cao (cm)","Cho phép đánh giá của khách hàng?","Ghi chú thanh toán","Giá khuyến mãi","Giá bán thường","Danh mục","Từ khóa","Lớp giao hàng","Hình ảnh","Giới hạn tải xuống","Ngày hết hạn tải về",Gốc,"Các sản phẩm theo nhóm",Upsells,"Bán chéo","URL ngoài","Nội dung nút bấm","Vị trí"
+453,simple,,"Arduino ESP8266 Wifi Shield",1,0,visible,"<strong><span style=""font-size: 12pt;"">Thông số kỹ thuật:</span></strong>
+<ul>
+ 	<li><span style=""font-size: 12pt;"">Arduino ESP8266 Wifi Shield</span></li>
+ 	<li><span style=""font-size: 12pt;"">Module chính: Wifi SoC ESP8266 V12E</span></li>
+ 	<li><span style=""font-size: 12pt;"">Thiết kế dạng Shield chuẩn chân Arduino.</span></li>
+ 	<li><span style=""font-size: 12pt;"">Cấp nguồn từ các chân nguồn của Arduino.</span></li>
+ 	<li><span style=""font-size: 12pt;"">Pin Out đầy đủ các chân của ESP8266 V12E.</span></li>
+ 	<li><span style=""font-size: 12pt;"">Tích hợp Switch thiết lập chế độ giao tiếp với Arduino, chế độ nạp Firmware.</span></li>
+ 	<li><span style=""font-size: 12pt;"">Tích hợp các Led PWR, DFU, AP, STA.</span></li>
+</ul>
+<img class=""alignnone size-medium wp-image-454"" src=""http://localhost:8080/ict/wp-content/uploads/2018/12/1jpg-300x300.jpg"" alt="""" width=""300"" height=""300"" />","<span style=""font-size: 12pt;"">Arduino ESP8266 Wifi Shield được thiết kế dạng Shield Arduino nên có thể kết nối dễ dàng với hầu hết các board Arduino hiện nay để thực hiện các ứng dụng với module wifi esp8266 như bật tắt thiết bị qua wifi, thu thập dữ liệu qua wifi, báo động wifi, và hầu hết các ứng dụng IoT hiện nay.</span>
+
+<span style=""font-size: 12pt;"">Arduino ESP8266 Wifi Shield được tích hợp mạch nguồn riêng giúp ESP8266 hoạt động ổn định, đồng thời thiết kế Pin Out dạng rào cho tất cả các chân GPIO của ESP8266 giúp sử dụng dễ dàng, các chân GPIO đều có gắn thêm điện trở có chức năng chuyển mức tín hiệu giao tiếp 5V - 3V3 giữa Arduino và ESP8266.</span>",,,taxable,,1,,,0,0,,,,,1,,135000,150000,"IOT - INTERNET OF THINGS, IOT - INTERNET OF THINGS > Phần cứng IoT","Arduino, ESP8266, iot",,http://localhost:8080/ict/wp-content/uploads/2018/12/1jpg.jpg,,,,,,,,,0
