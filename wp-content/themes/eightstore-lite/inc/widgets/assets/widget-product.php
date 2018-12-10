@@ -124,6 +124,10 @@ public function widget($args, $instance){
         )),
         'posts_per_page' => $product_number
       );
+      //
+       $manufacturer_images = get_field("image", "category_". $product_category);
+
+       print_r($manufacturer_images);
     }
 
     elseif($product_type == 'latest_product'){
@@ -180,6 +184,13 @@ public function widget($args, $instance){
           )
       );
     }
+
+
+// vars
+/*$image = get_field('image', $term->taxonomy . '_' . $term->term_id);*/
+
+// print_r($image); echo "-----------------------------";
+
     $product_loop = new WP_Query( $product_args );
     if($product_loop->have_posts()){
       ?>
@@ -187,7 +198,7 @@ public function widget($args, $instance){
       <section>
         <h1 class="prod-title"><?php echo esc_attr($product_title); ?></h1>
         <p class="prod-title-desc"><?php echo esc_attr($product_list_desc); ?></p>
-
+ 
         <ul class="new-prod-slide">
           <?php
           $count=0;
