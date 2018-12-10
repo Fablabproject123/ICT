@@ -1,6 +1,6 @@
 <?php
 /**
- * Widget Product 1
+ * Widget Product 3
  *
  *
  * @package 8Store Lite
@@ -19,7 +19,7 @@ if(is_woocommerce_available()):
          */
         public function __construct() {
             parent::__construct(
-                'eightstore_lite_cat_product', 'ES: Footer 3', array(
+                'eightstore_lite_footer_3', 'ES: Footer 3', array(
                     'description' => __('Footer 3', 'eightstore-lite')
                 )
             );

@@ -19,7 +19,7 @@ if(is_woocommerce_available()):
          */
         public function __construct() {
             parent::__construct(
-                'eightstore_lite_cat_product', 'ES: Footer 1', array(
+                'eightstore_lite_footer_1', 'ES: Footer 1', array(
                     'description' => __('Footer 1', 'eightstore-lite')
                 )
             );
