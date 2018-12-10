@@ -16,3 +16,4 @@ require get_template_directory() . '/inc/widgets/assets/widget-promo.php';
 require get_template_directory() . '/inc/widgets/assets/widget-product.php';
 require get_template_directory() . '/inc/widgets/assets/widget-cat-product.php';
 require get_template_directory() . '/inc/widgets/assets/widget-cta-video.php';
+require get_template_directory() . '/inc/widgets/assets/widget-footer-1.php';
