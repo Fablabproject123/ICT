@@ -14,19 +14,9 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<?php
 	//Top Footer Widget
-	if(is_active_sidebar('footer-1')){
-		?>
-		<section id="section-footer" class="clear">
-			<div class="store-wrapper">
-				<?php dynamic_sidebar('footer-1'); ?>
-			</div>
-		</section>
-		<?php
-	}
-	//Footer Widget
 	if(is_active_sidebar('footer-2')){
 		?>
-		<section id="section-footer2" class="clear">
+		<section id="section-footer" class="clear">
 			<div class="store-wrapper">
 				<?php dynamic_sidebar('footer-2'); ?>
 			</div>
@@ -42,7 +32,7 @@
 					if(get_theme_mod('footer_copyright_text') && get_theme_mod('footer_copyright_text')!=""){
 						echo wp_kses_post(get_theme_mod('footer_copyright_text'));
 					}?>
-				
+
 				</div><!-- .site-info -->
 
 				<!-- Social Icons -->

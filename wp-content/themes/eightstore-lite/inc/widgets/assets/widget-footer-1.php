@@ -34,21 +34,9 @@ if(is_woocommerce_available()):
         }
 
         public function widget($args, $instance){
-
+            the_field('email', 'widget_' . $args['widget_id']);
         }
 
-        /**
-         * Sanitize widget form values as they are saved.
-         *
-         * @see WP_Widget::update()
-         *
-         * @param	array	$new_instance	Values just sent to be saved.
-         * @param	array	$old_instance	Previously saved values from database.
-         *
-         * @uses	eightstore_lite_widgets_updated_field_value()		defined in widget-fields.php
-         *
-         * @return	array Updated safe values to be saved.
-         */
         public function update($new_instance, $old_instance) {
             $instance = $old_instance;
 

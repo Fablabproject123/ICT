@@ -210,7 +210,7 @@ function eightstore_lite_scripts() {
 
 	wp_enqueue_script( 'eightstore-wow', get_template_directory_uri() . '/js/wow.min.js',array(),'1.1.2',true);
 
-	wp_enqueue_script( 'eightstore-slick-js', get_template_directory_uri() . '/js/slick.js', array(), '1.5.0', false );
+	wp_enqueue_script( 'eightstore-slick-js', get_template_directory_uri() . '/js/slick.js', array(), '1.5.0', true );
 
 
 	wp_enqueue_script( 'eightstore-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );

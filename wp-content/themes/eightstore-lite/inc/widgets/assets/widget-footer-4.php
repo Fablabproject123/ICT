@@ -13,10 +13,7 @@ if(is_woocommerce_available()):
     }
 
     class Eightstore_lite_footer_4 extends WP_Widget {
-        /**
-         * Register Widget with Wordpress
-         *
-         */
+
         public function __construct() {
             parent::__construct(
                 'eightstore_lite_footer_4', 'ES: Footer 4', array(
@@ -24,11 +21,6 @@ if(is_woocommerce_available()):
                 )
             );
         }
-
-        /**
-         * Helper function that holds widget fields
-         * Array is used in update and form functions
-         */
         private function widget_fields() {
             return;
         }
@@ -36,19 +28,6 @@ if(is_woocommerce_available()):
         public function widget($args, $instance){
 
         }
-
-        /**
-         * Sanitize widget form values as they are saved.
-         *
-         * @see WP_Widget::update()
-         *
-         * @param	array	$new_instance	Values just sent to be saved.
-         * @param	array	$old_instance	Previously saved values from database.
-         *
-         * @uses	eightstore_lite_widgets_updated_field_value()		defined in widget-fields.php
-         *
-         * @return	array Updated safe values to be saved.
-         */
         public function update($new_instance, $old_instance) {
             $instance = $old_instance;
 
@@ -66,15 +45,6 @@ if(is_woocommerce_available()):
             return $instance;
         }
 
-        /**
-         * Back-end widget form.
-         *
-         * @see WP_Widget::form()
-         *
-         * @param	array $instance Previously saved values from database.
-         *
-         * @uses	eightstore_lite_widgets_show_widget_field()		defined in widget-fields.php
-         */
         public function form($instance) {
 
         }
