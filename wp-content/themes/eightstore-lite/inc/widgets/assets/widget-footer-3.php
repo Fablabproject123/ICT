@@ -34,6 +34,12 @@ if(is_woocommerce_available()):
         }
 
         public function widget($args, $instance){
+            ?>
+            <div class="col-3">
+                <?php the_field('title', 'widget_' . $args['widget_id']); ?>
+                <?php the_field('lien_hệ_-_hỗ_tro', 'widget_' . $args['widget_id']); ?>
+            </div>
+        <?php
 
         }
 
