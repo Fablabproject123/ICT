@@ -8,7 +8,7 @@
 if(is_woocommerce_available()):
     add_action('widgets_init', 'eightstore_lite_register_footer_3_widget');
 
-    function eightstore_lite_register_footer_2_widget(){ //functions start from here
+    function eightstore_lite_register_footer_3_widget(){ //functions start from here
         register_widget('Eightstore_lite_footer_3');
     }
 
