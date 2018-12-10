@@ -42,8 +42,7 @@
 					if(get_theme_mod('footer_copyright_text') && get_theme_mod('footer_copyright_text')!=""){
 						echo wp_kses_post(get_theme_mod('footer_copyright_text'));
 					}?>
-					<?php _e( 'WordPress Theme : ', 'eightstore-lite' );  ?><a  title="<?php echo __('Free WordPress Theme','eightstore-lite');?>" href="<?php echo esc_url( __( 'https://8degreethemes.com/wordpress-themes/eightstore-lite/', 'eightstore-lite' ) ); ?>"><?php _e( 'EightStore Lite', 'eightstore-lite' ); ?> </a>
-					<span><?php echo __(' by 8Degree Themes','eightstore-lite');?></span>
+				
 				</div><!-- .site-info -->
 
 				<!-- Social Icons -->
