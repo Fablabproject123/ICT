@@ -6,21 +6,21 @@
  * @package 8Store Lite
  */
 if(is_woocommerce_available()):
-    add_action('widgets_init', 'eightstore_lite_register_footer_3_widget');
+    add_action('widgets_init', 'eightstore_lite_register_footer_4_widget');
 
-    function eightstore_lite_register_footer_3_widget(){ //functions start from here
-        register_widget('Eightstore_lite_footer_3');
+    function eightstore_lite_register_footer_4_widget(){ //functions start from here
+        register_widget('Eightstore_lite_footer_4');
     }
 
-    class Eightstore_lite_footer_3 extends WP_Widget {
+    class Eightstore_lite_footer_4 extends WP_Widget {
         /**
          * Register Widget with Wordpress
          *
          */
         public function __construct() {
             parent::__construct(
-                'eightstore_lite_cat_product', 'ES: Footer 3', array(
-                    'description' => __('Footer 3', 'eightstore-lite')
+                'eightstore_lite_cat_product', 'ES: Footer 4', array(
+                    'description' => __('Footer 4', 'eightstore-lite')
                 )
             );
         }
