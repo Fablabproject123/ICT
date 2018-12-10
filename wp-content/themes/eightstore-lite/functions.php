@@ -133,63 +133,13 @@ function eightstore_lite_widgets_init() {
 		'after_widget'  => '</aside>',
 		) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Product Widget 1', 'eightstore-lite' ),
+		'name'          => esc_html__( 'Các danh mục', 'eightstore-lite' ),
 		'id'            => 'widget-product-1',
-		'description'   => 'Show a slider of product',
+		'description'   => 'Hiển thị slider sản phẩm',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Promo Widget 1', 'eightstore-lite' ),
-		'id'            => 'widget-promo-1',
-		'description'   => 'Show banner or text or some call to action',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s '.eightstore_lite_count_widgets('widget-promo-1').'">',
-		'after_widget'  => '</aside>',
-		) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Category Widget 1', 'eightstore-lite' ),
-		'id'            => 'widget-category-1',
-		'description'   => 'Show a slider with category details and product of it.',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Promo Widget 2', 'eightstore-lite' ),
-		'id'            => 'widget-promo-2',
-		'description'   => 'Show banner or text or some call to action',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Category Widget 2', 'eightstore-lite' ),
-		'id'            => 'widget-category-2',
-		'description'   => 'Show a slider with category details and product of it.',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Promo Widget 3', 'eightstore-lite' ),
-		'id'            => 'widget-promo-3',
-		'description'   => 'Show banner or text or some call to action',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Product Widget 2', 'eightstore-lite' ),
-		'id'            => 'widget-product-2',
-		'description'   => 'Show a slider of product',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		) );	
-	
-	register_sidebar( array(
-		'name'          => esc_html__( 'Promo Widget 4', 'eightstore-lite' ),
-		'id'            => 'widget-promo-4',
-		'description'   => 'Show banner or text or some call to action',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		) );
-	
+
 	register_sidebar( array(
 		'name'          => __( 'Sidebar - Left', 'eightstore-lite' ),
 		'id'            => 'sidebar-left',
