@@ -131,11 +131,9 @@ if (is_woocommerce_available()):
                         'posts_per_page' => $product_number
                     );
                     //
-                    $manufacturer_images = get_field("image", "category_" . $product_category);
-
-
-
+                    $manufacturer_images = get_field("image", "category_" . $product_category)['url'];
                     print_r(get_term($product_category));
+
                 } elseif ($product_type == 'latest_product') {
                     $product_args = array(
                         'post_type' => 'product',

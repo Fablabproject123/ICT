@@ -19,7 +19,17 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_id' => 'primary-menu' ) ); ?>
+	<div class="store-menu">
+		<div class="store-wrapper">
+			<nav id="site-navigation" class="main-navigation " role="navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '', 'eightstore-lite' ); ?></button>
+				<div class="top-menu">
+				<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_id' => 'primary-menu' ) ); ?>
+				</div>
+			</nav><!-- #site-navigation -->
+			<div class="clear"></div>
+		</div>
+	</div>
 	<div id="page" class="hfeed site">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'eightstore-lite' ); ?></a>
 
@@ -55,7 +65,7 @@
 
 			<div class="main-header">
 				<div class="store-wrapper">
-					<div class="site-branding">
+					<div class="site-branding" style="float: left;">
 						<?php if ( get_header_image() ) : ?>
 							<a class="header-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 								<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
@@ -66,8 +76,20 @@
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><div class="site-description"><?php bloginfo( 'description' ); ?></div></a>
 						</div>
 					</div><!-- .site-branding -->
-					
-					<div class="right-links">
+					<div>
+						<?php
+							if(is_active_sidebar('widget-header-link')){
+								?>
+								<section id="" class="clear">
+					                <div class="row">
+									<?php dynamic_sidebar('widget-header-link'); ?>
+					                </div>
+								</section>
+								<?php
+							}
+						?>
+					</div>	
+					<div class="right-links" style="width: 15%;">
 						<!-- if enabled from customizer -->
 						<?php if(get_theme_mod('hide_header_search')!='1'){ ?>
 						<div class="header-search">
@@ -139,7 +161,7 @@
 					</div>
 				</div>
 			</div><!-- Main Header -->
-			<div class="store-menu">
+			<div class="store-menu" style="clear: both;">
 				<div class="store-wrapper">
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '', 'eightstore-lite' ); ?></button>

@@ -1,0 +1,4 @@
+2018-12-11T08:16:58+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\header.php on line 103
+
+2018-12-11T09:06:37+00:00 CRITICAL syntax error, unexpected 'public' (T_PUBLIC), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\inc\widgets\assets\widget-product.php on line 238
+
