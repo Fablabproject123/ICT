@@ -20,3 +20,4 @@ require get_template_directory() . '/inc/widgets/assets/widget-footer-1.php';
 require get_template_directory() . '/inc/widgets/assets/widget-footer-2.php';
 require get_template_directory() . '/inc/widgets/assets/widget-footer-3.php';
 require get_template_directory() . '/inc/widgets/assets/widget-footer-4.php';
+require get_template_directory() . '/inc/widgets/assets/widget-post-header.php';

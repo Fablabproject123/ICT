@@ -13,7 +13,7 @@
 <div class="clear"></div>
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<?php
-	//Top Footer Widget
+
 	if(is_active_sidebar('footer-2')){
 		?>
 		<section id="section-footer" class="clear">

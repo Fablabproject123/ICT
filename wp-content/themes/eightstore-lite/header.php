@@ -19,6 +19,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_id' => 'primary-menu' ) ); ?>
 	<div id="page" class="hfeed site">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'eightstore-lite' ); ?></a>
 

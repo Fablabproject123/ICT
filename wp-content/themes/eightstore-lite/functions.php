@@ -47,7 +47,8 @@ function eightstore_lite_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'eightstore-lite' ),
+		'primary'   => esc_html__( 'Primary Menu', 'eightstore-lite' ),
+		'top'   => esc_html__( 'Top Menu', 'eightstore-lite' ),
 		) );
 
 	/*
@@ -107,32 +108,6 @@ add_action( 'after_setup_theme', 'eightstore_lite_content_width', 0 );
  */
 function eightstore_lite_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'eightstore-lite' ),
-		'id'            => 'sidebar-1',
-		'description'   => 'Sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-		) );
-	register_sidebar( array(
-		'name'          => __( 'Shop Sidebar', 'eightstore-lite' ),
-		'id'            => 'shop',
-		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="%2$s '.eightstore_lite_count_widgets( 'shop' ).'">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<span class="widget-title">',
-		'after_title'   => '</span>',
-		) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Language Translator', 'eightstore-lite' ),
-		'id'            => 'eightstore-lite-language-option',
-		'description'   => 'Add Plugin and place its widget here.',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		) );
-	register_sidebar( array(
 		'name'          => esc_html__( 'Các danh mục', 'eightstore-lite' ),
 		'id'            => 'widget-product-1',
 		'description'   => 'Hiển thị slider sản phẩm',
@@ -140,32 +115,6 @@ function eightstore_lite_widgets_init() {
 		'after_widget'  => '</aside>',
 		) );
 
-	register_sidebar( array(
-		'name'          => __( 'Sidebar - Left', 'eightstore-lite' ),
-		'id'            => 'sidebar-left',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		) );
-	
-	register_sidebar( array(
-		'name'          => __( 'Sidebar - Right', 'eightstore-lite' ),
-		'id'            => 'sidebar-right',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s ">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-		) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Top Footer Widgets', 'eightstore-lite' ),
-		'id'            => 'footer-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="top-footer-widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="footer-widget-title">',
-		'after_title'   => '</h2>',
-		) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Widgets', 'eightstore-lite' ),
 		'id'            => 'footer-2',
@@ -175,6 +124,14 @@ function eightstore_lite_widgets_init() {
 		'before_title'  => '<h2 class="footer-widget-title">',
 		'after_title'   => '</h2>',
 		) );
+
+    register_sidebar( array(
+        'name'          => esc_html__( 'Các Liên Header', 'eightstore-lite' ),
+        'id'            => 'widget-header-link',
+        'description'   => 'Các Liên Header',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+    ) );
 }
 add_action( 'widgets_init', 'eightstore_lite_widgets_init' );
 
@@ -296,4 +253,4 @@ require get_template_directory() . '/css/config-styles.php';
 /**
  * Load support Information
  */
-require get_template_directory() . '/welcome/eightstore_lite_about.php';
+//require get_template_directory() . '/welcome/eightstore_lite_about.php';
