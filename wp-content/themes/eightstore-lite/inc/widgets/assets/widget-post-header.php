@@ -40,8 +40,21 @@ if (is_woocommerce_available()):
         public function widget($args, $instance)
         {
             ?>
-            <div class="col-2">               
-                <a href="<?php echo get_field('post_link', 'widget_' . $args['widget_id'])['url']; ?>"><?php the_field('title', 'widget_' . $args['widget_id']); ?></a>
+            <div class="col-3 header-link">
+                <div class="d-flex">
+                    <div class="mr-2">
+                        <span class="icon"><?php the_field('icon', 'widget_' . $args['widget_id']); ?></span>
+                    </div>
+                    <div>
+                        <div class="title mb-1">
+                            <a href="<?php the_field('link', 'widget_' . $args['widget_id']) ?>"><?php the_field('title', 'widget_' . $args['widget_id']); ?></a>
+                        </div>
+                        <div class="description">
+                            <?php the_field('description', 'widget_' . $args['widget_id']); ?>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <?php
         }

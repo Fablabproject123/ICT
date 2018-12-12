@@ -159,6 +159,8 @@ function eightstore_lite_scripts() {
 
 	wp_enqueue_style( 'eightstore-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'custome-style', get_template_directory_uri() . '/css/custom.css');
+
 	//check if responsive mode is enabled.
 	if(get_theme_mod('is_mode_responsive')!='1'){
 		wp_enqueue_style( 'eightstore-responsive', get_template_directory_uri() . '/css/responsive.css');

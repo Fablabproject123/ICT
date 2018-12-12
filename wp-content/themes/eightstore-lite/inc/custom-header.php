@@ -25,8 +25,8 @@ function eightstore_lite_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'eightstore_lite_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 250,
+		'height'                 => 180,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'eightstore_lite_header_style',
 		'admin-head-callback'    => 'eightstore_lite_admin_header_style',

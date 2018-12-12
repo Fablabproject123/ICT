@@ -47,455 +47,37 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-.top-menu{
-	margin-left:60%;
-}
-html {
-	font-family: sans-serif;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust:     100%;
-}
 
-body {
+@font-face {
+	font-family: 'Montserrat';
+	src: url("fonts/Montserrat/Montserrat-Regular.ttf"); }
+@font-face {
+	font-family: 'Montserrat-Light';
+	src: url("fonts/Montserrat/Montserrat-Regular.ttf"); }
+@font-face {
+	font-family: 'Montserrat-SemiBold';
+	src: url("fonts/Montserrat/Montserrat-SemiBold.ttf"); }
+@font-face {
+	font-family: 'Montserrat-Bold';
+	src: url("fonts/Montserrat/Montserrat-Bold.ttf"); }
+@font-face {
+	font-family: 'Montserrat-Medium';
+	src: url("fonts/Montserrat/Montserrat-Medium.ttf"); }
+
+ul{
 	margin: 0;
-	font-family: 'Lato';
-}
-
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-	display: block;
-}
-
-audio,
-canvas,
-progress,
-video {
-	display: inline-block;
-	vertical-align: baseline;
-}
-
-audio:not([controls]) {
-	display: none;
-	height: 0;
-}
-
-[hidden],
-template {
-	display: none;
-}
-
-a {
-	background-color: transparent;
-	text-decoration: none;
-}
-
-a:active,
-a:hover {
-	outline: 0;
-	color: #f7c545;
-}
-
-abbr[title] {
-	border-bottom: 1px dotted;
-}
-
-b,
-strong {
-	font-weight: bold;
-}
-
-dfn {
-	font-style: italic;
-}
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
-
-mark {
-	background: #ff0;
-	color: #000;
-}
-
-small {
-	font-size: 80%;
-}
-
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sup {
-	top: -0.5em;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-img {
-	border: 0;
-}
-
-svg:not(:root) {
-	overflow: hidden;
-}
-
-figure {
-	margin: 1em 40px;
-}
-
-hr {
-	box-sizing: content-box;
-	height: 0;
-}
-
-pre {
-	overflow: auto;
-}
-
-code,
-kbd,
-pre,
-samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-	color: inherit;
-	font: inherit;
-	margin: 0;
-}
-
-button {
-	overflow: visible;
-}
-
-button,
-select {
-	text-transform: none;
-}
-
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	-webkit-appearance: button;
-	cursor: pointer;
-}
-
-button[disabled],
-html input[disabled] {
-	cursor: default;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	border: 0;
 	padding: 0;
 }
-
-input {
-	line-height: normal;
+a{
+	color: #333333;
 }
-
-input[type="checkbox"],
-input[type="radio"] {
-	box-sizing: border-box;
-	padding: 0;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-	height: auto;
-}
-
-input[type="search"] {
-	-webkit-appearance: textfield;
-	/*box-sizing: content-box;*/
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-body,
-button,
-input,
-select,
-textarea {
-	color: #404040;
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 1.5;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
-}
-
-p {
-	margin-bottom: 1.5em;
-}
-
-dfn,
-cite,
-em,
-i {
-	font-style: italic;
-}
-
-blockquote {
-	margin: 0 1.5em;
-}
-
-address {
-	margin: 0 0 1.5em;
-}
-
-pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
-}
-
-code,
-kbd,
-tt,
-var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-}
-
-abbr,
-acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
-}
-
-mark,
-ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
-
-big {
-	font-size: 125%;
-}
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-html {
-	box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
+html{-ms-overflow-x: hidden;}
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
-}
+	font-size: 13px;
+	color: #333333;
+	font-family: 'Montserrat', Arial, sans-serif;
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
 }
-
-blockquote,
-q {
-	quotes: "" "";
-}
-
-hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-}
-
-ul,
-ol {
-	margin: 0 0 1.5em 3em;
-}
-
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-
-dt {
-	font-weight: bold;
-}
-
-dd {
-	margin: 0 1.5em 1.5em;
-}
-
-img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
-}
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-}
-
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	width: 100%;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-	color: #111;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: 3px;
-	width: 100%;
-}
-
-textarea {
-	padding-left: 3px;
-	width: 100%;
-}
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-	color: inherit;
-	transition: all ease-in-out 0.3s;
-	-webkit-transition: all ease-in-out 0.3s;
-	-moz-transition: all ease-in-out 0.3s;
-	-ms-transition: all ease-in-out 0.3s;
-}
-
-a:visited {
-	color: inherit;
-}
-
-a:hover,
-a:focus,
-a:active {
-	color: inherit;
-}
-
-a:focus {
-	outline: thin dotted;
-}
-
-a:hover,
-a:active {
-	outline: 0;
-}
-
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -942,24 +524,6 @@ object {
 /*--------------------------------------------------------------
 COMMON CSS
 --------------------------------------------------------------*/
-body {
-	font-weight: 400;
-	position: relative;
-}
-
-.store-wrapper {
-	width:1194px;
-	margin: 0 auto;
-	clear: both;
-}
-
-.hide{
-	display: none;
-}
-
-.clear{
-	clear: both;
-}
 
 div#es-top {
 	position: fixed;
@@ -1157,110 +721,6 @@ body.boxed #page{
 /*--------------------------------------------------------------
 Header css
 --------------------------------------------------------------*/
-.translate-dropdwn, .top-ticker, .header-callto, .es-social-header {
-	display: inline-block;
-	vertical-align: middle;
-}
-.translate-dropdwn .widgettitle {
-	display: none;
-}
-.top-ticker {
-	max-width: 450px;
-	margin
-}
-.ticker-title, #ticker{
-	display: inline-block;
-	vertical-align: middle;
-}
-.ticker-title{
-	background: rgba(0, 0, 0, 0) url("images/latest-mid-bg.png") repeat-x scroll 0 0;
-	color: #fff;
-	font-family: open sans;
-	font-size: 16px;
-	height: 30px;
-	line-height: 32px;
-	margin-right: 10px;
-	padding: 0 10px;
-	position: relative;
-	margin-left: 17px;
-}
-.ticker-title::before {
-	background: rgba(0, 0, 0, 0) url("images/latest-before-bg.png") no-repeat scroll 0 0;
-	content: "";
-	height: 30px;
-	left: -17px;
-	position: absolute;
-	width: 17px;
-}
-.ticker-title::after {
-	background: rgba(0, 0, 0, 0) url("images/latest-after-bg.png") no-repeat scroll 0 0;
-	content: "";
-	height: 34px;
-	position: absolute;
-	right: -8px;
-	top: -2px;
-	width: 8px;
-}
-ul#ticker {
-	max-width: 78%;
-	margin: 0;
-	padding: 0;
-}
-h5.ticker_tick {
-	color: #999797;
-	font-family: open sans;
-	font-size: 14px;
-	font-weight: normal;
-	margin: 0;
-	padding: 0;
-}
-.header-callto {
-	color: #999797;
-	text-align: right;
-	width: 49%;
-	float: right;
-}
-.header-callto > a {
-	color: #999797;
-	font-family: open sans;
-	font-size: 14px;
-	text-decoration: none;
-	padding-left: 5px;
-}
-.header-callto > a:first-child {
-	padding-left: 0;
-	padding-right: 5px;
-}
-.header-callto > a:hover {
-	color: #f7c545;
-}
-.header-callto .fa.fa-phone, .header-callto .fa.fa-envelope {
-	color: #0bb1af;
-	margin-right: 3px;
-}
-.es-social-header {
-	margin-left: 10px;
-}
-.social-icons .fa {
-	background: #0ab0ae none repeat scroll 0 0;
-	color: #fff;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	width: 30px;
-	transition: all ease-in-out 0.3s;
-	-webkit-transition: all ease-in-out 0.3s;
-	-moz-transition: all ease-in-out 0.3s;
-	-ms-transition: all ease-in-out 0.3s;
-	border-radius: 100%;
-	margin: 2px;
-}
-.social-icons .fa:hover {
-	background: #f7c545;
-}
-.main-header {
-	padding: 25px 0 19px;
-}
 .site-branding, .right-links{
 	display: inline-block;
 	vertical-align: middle;
@@ -1316,7 +776,6 @@ h2.site-description{
 }
 .top-header{
 	background: #eeeeee none repeat scroll 0 0;
-	padding: 5px 0;
 }
 .top-header .widget{
 	margin: 0;
@@ -1486,13 +945,12 @@ h2.site-description{
 	font-family: open sans;
 	font-size: 16px;
 	height: 28px;
-	left: 6px;
 	line-height: 29px;
 	margin: 0 auto;
 	position: absolute;
-	right: 0;
+	right: -10px;
 	text-align: center;
-	top: -19px;
+	top: 25px;
 	width: 28px;
 	transition: all ease-in-out 0.3s;
 	-webkit-transition: all ease-in-out 0.3s;
@@ -1800,6 +1258,8 @@ BANNER SLIDER SECTION
 	position: relative;
 }
 #home-slider .slick-slide img {
+	width: 100%;
+	max-height: 100vh;
 	margin: 0 auto;
 }
 .banner-caption {
@@ -1836,7 +1296,6 @@ BANNER SLIDER SECTION
 }
 .caption-desc {
 	color: #000;
-	font-family: "Lato";
 	font-size: 21px;
 	font-weight: 300;
 	line-height: 28px;
@@ -2013,9 +1472,7 @@ section#section-promo1, #section-category1 {
 #section-category1 .item-prod-wrap:last-child{
 	margin-right: 0;
 }
-    /*#section-promo4 .store-wrapper{
-    	background-color: #ccc;
-    	}*/
+
     	ul.feature-cat-product li.space, .new-prod-slide li.space{
     		display: none;
     	}
@@ -2183,7 +1640,6 @@ PRODUCT SECTION ONE
 	-ms-transition: all ease 0.3s;
 }
 .item-wishlist span {
-	font-family: 'Lato';
 	color: #000;
 	font-weight: 300;
 	position: absolute;
@@ -2236,7 +1692,6 @@ PRODUCT SECTION ONE
 	border-bottom: 1px solid #BBB;
 }
 .title-cart h3 {
-	font-family: "Lato";
 	font-size: 16px;
 	font-weight: normal;
 	text-decoration: none;
@@ -3600,7 +3055,7 @@ WOOCOMMERCE STYLE
 	}
 	.woocommerce div.product .woocommerce-tabs .panel h2 {
 		margin: 0 0 10px 0;
-		font-family: 'Lato';
+		
 		font-size: 18px;
 		font-weight: 900;
 	}
