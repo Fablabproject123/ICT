@@ -79,47 +79,47 @@
                                         </div> <!--  search-form-->
                                     <?php } ?>
 
-<!--                                    <div class="my-account">-->
-<!--                                        <i class="fa fa-unlock-alt"></i>-->
-<!--                                        <div class="welcome-user">-->
-<!--                                            --><?php
-//                                            //if user is logged in
-//                                            if (is_user_logged_in()) {
-//                                                global $current_user;
-//                                                wp_get_current_user();
-//                                                ?>
-<!--                                                --><?php //_e('Welcome', 'eightstore-lite') . " "; ?>
-<!--                                                <a href="--><?php //echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?><!--">-->
-<!--										<span class="user-name">-->
-<!--											--><?php //echo $current_user->display_name; ?>
-<!--										</span>-->
-<!--                                                </a>-->
-<!--                                                --><?php //_e('!', 'eightstore-lite'); ?>
-<!--                                                <a href="--><?php //echo wp_logout_url(); ?><!--" class="logout">-->
-<!--                                                    --><?php //_e('Logout', 'eightstore-lite'); ?>
-<!--                                                </a>-->
-<!--                                                --><?php
-//                                            } else {
-//                                                if (is_woocommerce_available()) {
-//                                                    woocommerce_login_form();
-//                                                    ?>
-<!--                                                    <a href="--><?php //echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?><!--"-->
-<!--                                                       class="register">-->
-<!--                                                        --><?php //_e('Register', 'eightstore-lite'); ?>
-<!--                                                    </a>-->
-<!--                                                    --><?php
-//                                                } else {
-//                                                    ?>
-<!--                                                    <a href="--><?php //echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?><!--"-->
-<!--                                                       class="login">-->
-<!--                                                        --><?php //_e('Login', 'eightstore-lite'); ?>
-<!--                                                    </a>-->
-<!--                                                    --><?php
-//                                                }
-//                                            }
-//                                            ?>
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                    <div class="my-account">
+                                        <i class="fa fa-unlock-alt"></i>
+                                        <div class="welcome-user">
+                                            <?php
+                                            //if user is logged in
+                                            if (is_user_logged_in()) {
+                                                global $current_user;
+                                                wp_get_current_user();
+                                                ?>
+                                                <?php _e('Welcome', 'eightstore-lite') . " "; ?>
+                                                <a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>">
+										<span class="user-name">
+											<?php echo $current_user->display_name; ?>
+										</span>
+                                                </a>
+                                                <?php _e('!', 'eightstore-lite'); ?>
+                                                <a href="<?php echo wp_logout_url(); ?>" class="logout">
+                                                    <?php _e('Logout', 'eightstore-lite'); ?>
+                                                </a>
+                                                <?php
+                                            } else {
+                                                if (is_woocommerce_available()) {
+                                                    woocommerce_login_form();
+                                                    ?>
+                                                    <a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>"
+                                                       class="register">
+                                                        <?php _e('Register', 'eightstore-lite'); ?>
+                                                    </a>
+                                                    <?php
+                                                } else {
+                                                    ?>
+                                                    <a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>"
+                                                       class="login">
+                                                        <?php _e('Login', 'eightstore-lite'); ?>
+                                                    </a>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
 
                                     <!-- Cart Link -->
                                     <div class="cart-box">
