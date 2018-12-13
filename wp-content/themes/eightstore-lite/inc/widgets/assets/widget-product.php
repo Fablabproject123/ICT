@@ -131,9 +131,10 @@ if (is_woocommerce_available()):
                         'posts_per_page' => $product_number
                     );
                     //
-                    $manufacturer_images = get_field("image", "category_" . $product_category)['url'];
-                    print_r(get_term($product_category));
+                    $manufacturer_images = get_field("image", "category_" . $product_category);
+                    // print_r(get_term($product_category));
 
+                  
                 } elseif ($product_type == 'latest_product') {
                     $product_args = array(
                         'post_type' => 'product',
@@ -198,8 +199,13 @@ if (is_woocommerce_available()):
                             <?php echo esc_attr($product_title); ?>
                         </h1>
                         <p class="prod-title-desc"><?php echo esc_attr($product_list_desc); ?></p>
-                        asdasd
-                        asdasd
+                        <?php
+                        foreach ($manufacturer_images as $row => $value) {
+                        ?>
+                            <img src="<?php print_r($value['item']); ?>">
+                        <?php
+                        }
+                        ?>
                         <ul class="new-prod-slide">
                             <?php
                             $count = 0;
@@ -213,7 +219,7 @@ if (is_woocommerce_available()):
                     <?php echo $after_widget; ?>
                     <?php
                 } else {
-                    echo "No Products";
+                    //echo "No Products";
                 }
             }
         }
