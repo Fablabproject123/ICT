@@ -143,19 +143,19 @@ function eightstore_lite_scripts() {
 	$font_args = array(
 		'family' => 'Open+Sans:400,600,700,300|Oswald:400,700,300|Dosis:400,300,500,600,700|Lato:400,300,700,900',
 		);
-	wp_enqueue_style('eightstore-google-fonts', add_query_arg($font_args, "//fonts.googleapis.com/css"));
+//	wp_enqueue_style('eightstore-google-fonts', add_query_arg($font_args, "//fonts.googleapis.com/css"));
 	
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 
 	wp_enqueue_style('eightstore-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
 
-	wp_enqueue_style( 'eightstore-animate', get_template_directory_uri() . '/css/animate.css');
+//	wp_enqueue_style( 'eightstore-animate', get_template_directory_uri() . '/css/animate.css');
 
 	wp_enqueue_style( 'eightstore-slick', get_template_directory_uri() . '/css/slick.css');
 
-	wp_enqueue_style( 'eightstore-fancybox', get_template_directory_uri() . '/css/fancybox.css');
+//	wp_enqueue_style( 'eightstore-fancybox', get_template_directory_uri() . '/css/fancybox.css');
 
-	wp_enqueue_style( 'eightstore-custom-scrollcss', get_template_directory_uri() . '/css/jquery.mCustomScrollbar.css');
+//	wp_enqueue_style( 'eightstore-custom-scrollcss', get_template_directory_uri() . '/css/jquery.mCustomScrollbar.css');
 
 	wp_enqueue_style( 'eightstore-style', get_stylesheet_uri() );
 
@@ -166,21 +166,22 @@ function eightstore_lite_scripts() {
 		wp_enqueue_style( 'eightstore-responsive', get_template_directory_uri() . '/css/responsive.css');
 	}
 
-	wp_enqueue_script( 'eightstore-mousewheel', get_template_directory_uri() . '/js/jquery.mousewheel-3.0.4.pack.js', array('jquery'), '3.0.4', true );
-	wp_enqueue_script( 'eightstore-fancybox', get_template_directory_uri() . '/js/jquery.fancybox-1.3.4.js', array('jquery'), '1.3.4', true );
+//	wp_enqueue_script( 'eightstore-mousewheel', get_template_directory_uri() . '/js/jquery.mousewheel-3.0.4.pack.js', array('jquery'), '3.0.4', true );
+//	wp_enqueue_script( 'eightstore-fancybox', get_template_directory_uri() . '/js/jquery.fancybox-1.3.4.js', array('jquery'), '1.3.4', true );
 
-	wp_enqueue_script( 'eightstore-wow', get_template_directory_uri() . '/js/wow.min.js',array(),'1.1.2',true);
+//	wp_enqueue_script( 'eightstore-wow', get_template_directory_uri() . '/js/wow.min.js',array(),'1.1.2',true);
 
 	wp_enqueue_script( 'eightstore-slick-js', get_template_directory_uri() . '/js/slick.js', array("jquery"), '1.5.0', true );
 
 	wp_enqueue_script( 'eightstore-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array("jquery"), '1.5.0', true );
 
 
-	wp_enqueue_script( 'eightstore-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+//	wp_enqueue_script( 'eightstore-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'eightstore-custom-scrolljs', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', array(), '20130115', true );
+//	wp_enqueue_script( 'eightstore-custom-scrolljs', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', array(), '20130115', true );
 	
-	wp_enqueue_script( 'eightstore-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+//	wp_enqueue_script( 'eightstore-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( '/jquery-3.3.1', get_template_directory_uri() . '/js/jquery-3.3.1.min.js', array(), '3.3.1', false );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

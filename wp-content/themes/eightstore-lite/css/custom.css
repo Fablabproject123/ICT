@@ -7,7 +7,7 @@ a{
 }
 html{-ms-overflow-x: hidden;}
 body {
-    font-size: 13px;
+    font-size: 14px;
     color: #333333;
     font-family: 'Montserrat', Arial, sans-serif;
 
@@ -83,4 +83,66 @@ ul#top-menu li{
 .main-header #header-links .header-link:hover .icon i{
     color: #0056b3!important;
 }
+.widget-product{
+    margin-bottom: 2rem;
+}
+.widget-product .wrap-header-product .prod-title{
+    font-family: 'Montserrat-SemiBold';
+    font-size: 1.2rem!important;
+    color: #23527c!important;
+    border-bottom: 3px solid #ff8b00;
+    padding: 3px 5px;
+    margin: 5px 5px 0;
 
+}
+.widget-product .wrap-header-product .wrap-manufacturer_images .slick-prev{
+    background: url(../images/bt-prev.png) no-repeat;
+    width: 25px;
+    height: 60px;
+    left: -25px!important;
+    top: 50%!important;
+    right: auto!important;
+    transform: translateY(-50%);
+}
+
+.widget-product .wrap-header-product .wrap-manufacturer_images .slick-next{
+    transform: translateY(-50%);
+    top: 50%!important;
+    width: 25px;
+    height: 60px;
+    right: -30px!important;
+    left: auto!important;
+    background: url(../images/bt-next.png) no-repeat;
+}
+.widget-product .products .title-cart a h3{
+    font-size: 1rem;
+    font-family: 'ProximaNova-Bold';
+}
+.widget-product .products .title-cart a{
+    text-decoration: none;
+}
+.widget-product .products .price-desc .text{
+    color: red;
+    font-family: 'Montserrat-SemiBold';
+    font-size: 0.9rem;
+}
+footer {
+    background-color: #181818;
+    color: #999999;
+    word-spacing: 2px;
+    line-height: 1.5rem;
+}
+footer #section-footer .title p{
+    color: #ffffff;
+    font-size: 15px;
+    font-family: "Montserrat-Bold";
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+footer #section-footer .social-icons a{
+    margin-left: .5rem;
+}
+footer #section-footer .social-icons a i{
+    font-size: 1rem;
+    color: #a8a2a2
+}

@@ -40,12 +40,17 @@ if (is_woocommerce_available()):
         public function widget($args, $instance)
         {
             ?>
-            <div class="col-3">
-                <img src="<?php echo get_field('logo_footer', 'widget_' . $args['widget_id'])['url']; ?>">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-content-center align-items-center">
+                    <img src="<?php echo get_field('logo_footer', 'widget_' . $args['widget_id'])['url']; ?>">
+                    <?php do_action('eightstore_lite_social_links'); ?>
+                </div>
 
-                <?php the_field('email', 'widget_' . $args['widget_id']); ?>
-                <?php the_field('address', 'widget_' . $args['widget_id']); ?>
-                <?php the_field('phone', 'widget_' . $args['widget_id']); ?>
+            </div>
+            <div class="col-3 footer-1">
+                <div class="d-flex"><span class="mr-2"><i class="fa fa-envelope"></i></span><?php the_field('email', 'widget_' . $args['widget_id']); ?></div>
+                <div class="d-flex"><span class="mr-2"><i class="fa fa-map-marker"></i></span><?php the_field('address', 'widget_' . $args['widget_id']); ?></div>
+                <div class="d-flex"><span class="mr-2"><i class="fa fa-phone-square"></i></span><?php the_field('phone', 'widget_' . $args['widget_id']); ?></div>
             </div>
             <?php
         }

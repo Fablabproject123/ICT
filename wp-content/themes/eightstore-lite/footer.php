@@ -17,11 +17,13 @@
 	if(is_active_sidebar('footer-2')){
 		?>
 		<section id="section-footer" class="clear">
-			<div class="store-wrapper">
-                <div class="row">
-				<?php dynamic_sidebar('footer-2'); ?>
+			<div class="container">
+                <div class="store-wrapper">
+                    <div class="row">
+                        <?php dynamic_sidebar('footer-2'); ?>
+                    </div>
                 </div>
-			</div>
+            </div>
 		</section>
 		<?php
 	}
