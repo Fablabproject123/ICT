@@ -22,9 +22,9 @@ function eightstore_lite_count_widgets( $sidebar_id ) {
 	if ( empty( $_wp_sidebars_widgets ) ) :
 		$_wp_sidebars_widgets = get_option( 'sidebars_widgets', array() );
 	endif;
-	
+
 	$sidebars_widgets_count = $_wp_sidebars_widgets;
-	
+
 	if ( isset( $sidebars_widgets_count[ $sidebar_id ] ) ) :
 		$widget_count = count( $sidebars_widgets_count[ $sidebar_id ] );
 	$widget_classes = 'es-widget-count-' . count( $sidebars_widgets_count[ $sidebar_id ] );
@@ -59,7 +59,7 @@ function eightstore_ticker_header_customizer(){
 				<?php
 				$loop = new WP_Query(array(
 					'cat' => $ticker_category,
-					'posts_per_page' => -1    
+					'posts_per_page' => -1
 					));
 				if($loop->have_posts()) {
 					?>
@@ -74,7 +74,7 @@ function eightstore_ticker_header_customizer(){
 							<li>
 								<h5 class="ticker_tick ticker-h5-<?php echo $i; ?>"> <?php the_title(); ?> </h5>
 							</li>
-							<?php  
+							<?php
 						}
 						?>
 					</ul>
@@ -101,7 +101,7 @@ function eightstore_lite_get_title($title){
 		if($count>=3){$e_title .= " ".$arr[$i++];}
 		$e_title .= "</p>";
 		$e_title .= "<p class='other-all'>";
-		for ($j=$i; $j < $count; $j++) { 
+		for ($j=$i; $j < $count; $j++) {
 			$e_title .= $arr[$j]." ";
 		}
 		$e_title .= "</p>";
@@ -118,7 +118,7 @@ function eightstore_lite_homepage_slider_config(){
 	$auto_transition = (get_theme_mod('enable_auto_transition','1') == "0") ? "false" : "true";
 	$transition_type = get_theme_mod('transition_type','true');
 	$transition_speed = (!get_theme_mod('transition_speed')) ? "1000" : get_theme_mod('transition_speed');
-	if( $display_slider != "0") : 
+	if( $display_slider != "0") :
 		?>
 	<script type="text/javascript">
 		jQuery(function($){
@@ -130,13 +130,43 @@ function eightstore_lite_homepage_slider_config(){
 				speed: <?php echo esc_attr($transition_speed); ?>,
 				cssEase: 'linear',
 				pauseOnHover: false
-			});				
+			});
 		});
 	</script>
 	<?php
 	endif;
 }
 add_action('wp_head','eightstore_lite_homepage_slider_config');
+
+//homepage sub slider configuration settings
+function eightstore_lite_homepage_sub_slider_config(){
+    $display_slider = get_theme_mod('display_sub_slider','1');
+    $display_pager = (get_theme_mod('display_pager_1','1')=="0") ? "false" : "true";
+    $display_controls = (get_theme_mod('display_controls_1','1') == "0") ? "false" : "true";
+    $auto_transition = (get_theme_mod('enable_auto_transition_1','1') == "0") ? "false" : "true";
+    $transition_type = get_theme_mod('transition_type_1','true');
+    $transition_speed = (!get_theme_mod('transition_speed_1')) ? "1000" : get_theme_mod('transition_speed_1');
+    print_r($display_slider, $display_pager);
+    if( $display_slider != "0") :
+        ?>
+        <script type="text/javascript">
+            jQuery(function($){
+                $('#home-sub-slider .es-sub-slider').slick({
+                    dots: <?php echo esc_attr($display_pager); ?>,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: <?php echo esc_attr($display_controls); ?>,
+                    autoplay:<?php echo esc_attr($auto_transition); ?>,
+                    speed: <?php echo esc_attr($transition_speed); ?>,
+                    cssEase: 'linear',
+                    pauseOnHover: false
+                });
+            });
+        </script>
+    <?php
+    endif;
+}
+add_action('wp_head','eightstore_lite_homepage_sub_slider_config');
 
 //homepage slider content
 function eightstore_lite_homepage_slider_content(){
@@ -146,15 +176,15 @@ function eightstore_lite_homepage_slider_content(){
 		?>
 	<section id="home-slider">
 		<div class="es-slider">
-			<?php 
+			<?php
 			$slider_category = get_theme_mod('slider_setting_category');
 			if( !empty($slider_category)) :
 				$loop = new WP_Query(array(
 					'cat' => $slider_category,
-					'posts_per_page' => -1    
+					'posts_per_page' => -1
 					));
-			if($loop->have_posts()) : 
-				while($loop->have_posts()) : 
+			if($loop->have_posts()) :
+				while($loop->have_posts()) :
 					$loop-> the_post();
 				$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full', false );
 				?>
@@ -162,7 +192,7 @@ function eightstore_lite_homepage_slider_content(){
 					<a href="<?php the_permalink();?>">
 						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title_attribute(); ?>" />
 					</a>
-					<?php 
+					<?php
 					$display_captions = get_theme_mod('display_captions','1');
 					if(($display_captions!=0)){$display_captions=1;}
 					if($display_captions == 1): ?>
@@ -178,22 +208,80 @@ function eightstore_lite_homepage_slider_content(){
 							</div>
 						</div>
 					</div>
-					<?php  
+					<?php
 					endif; ?>
 				</div>
-				<?php 
+				<?php
 				endwhile;
 				endif; ?>
 			<?php endif;
 			?>
 		</div>
-		<?php  
-		endif; 
+		<?php
+		endif;
 		?>
 	</section>
 	<?php
 }
 add_action('eightstore_lite_homepage_slider','eightstore_lite_homepage_slider_content', 10);
+
+
+//homepage sub slider content
+function eightstore_lite_homepage_sub_slider_content(){
+    $display_slider = (get_theme_mod('display_sub_slider','1'))?get_theme_mod('display_sub_slider','1'):"1";
+    $display_captions = (get_theme_mod('display_captions_1','1'))?get_theme_mod('display_captions_1','1'):"1";
+    if( $display_slider == "1") :
+        ?>
+        <section id="home-sub-slider">
+        <div class="es-sub-slider">
+            <?php
+            $slider_category = get_theme_mod('sub_slider_setting_category');
+            if( !empty($slider_category)) :
+                $loop = new WP_Query(array(
+                    'cat' => $slider_category,
+                    'posts_per_page' => -1
+                ));
+                if($loop->have_posts()) :
+                    while($loop->have_posts()) :
+                        $loop-> the_post();
+                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full', false );
+                        ?>
+                        <div class="slides px-2">
+                            <a href="<?php the_permalink();?>">
+                                <img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title_attribute(); ?>" class="w-100"/>
+                            </a>
+                            <?php
+                            $display_captions = get_theme_mod('display_captions_1','1');
+                            if(($display_captions!=0)){$display_captions=1;}
+                            if($display_captions == 1): ?>
+                                <div class="banner-caption">
+                                    <div class="caption-wrapper">
+                                        <div class="caption-title">
+                                            <a href="<?php the_permalink();?>">
+                                                <?php eightstore_lite_get_title(get_the_title()); ?>
+                                            </a>
+                                        </div>
+                                        <div class="caption-desc">
+                                            <?php echo eightstore_lite_excerpt(get_the_content(),100,'...',true,true); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php
+                            endif; ?>
+                        </div>
+                    <?php
+                    endwhile;
+                endif; ?>
+            <?php endif;
+            ?>
+        </div>
+    <?php
+    endif;
+    ?>
+    </section>
+    <?php
+}
+add_action('eightstore_lite_homepage_sub_slider','eightstore_lite_homepage_sub_slider_content', 10);
 
 	//Social Icons Settings
 function eightstore_lite_social_links(){
@@ -302,7 +390,7 @@ if ( ! function_exists( 'is_woocommerce_available' ) ) {
 	}
 }
 if(is_woocommerce_available()):
-	
+
 
 	function woocommerce_get_product_thumbnail( $size = 'shop_catalog', $placeholder_width = 0, $placeholder_height = 0  ) {
 		global $post;
@@ -340,7 +428,7 @@ if(is_woocommerce_available()):
 			} else {
 				$xr = 4;
 			}
-			return $xr; 
+			return $xr;
 
 		}
 	}
@@ -379,8 +467,8 @@ if(is_woocommerce_available()):
 		echo '</div>';
 	}
 
-	
-	/** 
+
+	/**
 	 * Truncates text without breaking HTML Code
 	 */
 	function eightstore_lite_excerpt($eightstore_lite_text, $eightstore_lite_length = 100, $eightstore_lite_ending = '...', $eightstore_lite_exact = true, $eightstore_lite_considerHtml = true) {
@@ -484,6 +572,6 @@ if(is_woocommerce_available()):
 	}
 
 	function eightstore_lite_fonts_cb(){
-		echo "<link href='//fonts.googleapis.com/css?family=Arimo:400,700|Open+Sans:400,700,600italic,300|Roboto+Condensed:300,400,700|Roboto:300,400,700|Slabo+27px|Oswald:400,300,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|PT+Sans:400,700,400italic,700italic|Droid+Sans:400,700|Raleway:400,100,200,300,500,600,700,800,900|Droid+Serif:400,700,400italic,700italic|Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Montserrat:400,700|Roboto+Slab:400,100,300,700|Merriweather:400italic,400,900,300italic,300,700,700italic,900italic|Lora:400,700,400italic,700italic|PT+Sans+Narrow:400,700|Bitter:400,700,400italic|Lobster|Yanone+Kaffeesatz:400,200,300,700|Arvo:400,700,400italic,700italic|Oxygen:400,300,700|Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900|Dosis:200,300,400,500,600,700,800|Ubuntu+Condensed|Playfair+Display:400,700,900,400italic,700italic,900italic|Cabin:400,500,600,700,400italic,500italic,600italic|Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>";   
+		echo "<link href='//fonts.googleapis.com/css?family=Arimo:400,700|Open+Sans:400,700,600italic,300|Roboto+Condensed:300,400,700|Roboto:300,400,700|Slabo+27px|Oswald:400,300,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|PT+Sans:400,700,400italic,700italic|Droid+Sans:400,700|Raleway:400,100,200,300,500,600,700,800,900|Droid+Serif:400,700,400italic,700italic|Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Montserrat:400,700|Roboto+Slab:400,100,300,700|Merriweather:400italic,400,900,300italic,300,700,700italic,900italic|Lora:400,700,400italic,700italic|PT+Sans+Narrow:400,700|Bitter:400,700,400italic|Lobster|Yanone+Kaffeesatz:400,200,300,700|Arvo:400,700,400italic,700italic|Oxygen:400,300,700|Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900|Dosis:200,300,400,500,600,700,800|Ubuntu+Condensed|Playfair+Display:400,700,900,400italic,700italic,900italic|Cabin:400,500,600,700,400italic,500italic,600italic|Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>";
 	}
 	add_action('wp_footer', 'eightstore_lite_fonts_cb');
