@@ -201,8 +201,10 @@ if (is_woocommerce_available()):
                         <p class="prod-title-desc"><?php echo esc_attr($product_list_desc); ?></p>
                         <?php
                         foreach ($manufacturer_images as $row => $value) {
-                        ?>
-                            <img src="<?php print_r($value['item']); ?>">
+                        ?>  
+                            <a href="">
+                                <img style="border: 1px solid #ccc; margin: auto;" width="130px" height="130px" src="<?php print_r($value['item']); ?>">
+                            </a>   
                         <?php
                         }
                         ?>
