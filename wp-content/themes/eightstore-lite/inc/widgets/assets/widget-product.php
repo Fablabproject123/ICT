@@ -194,32 +194,7 @@ if (is_woocommerce_available()):
                 if ($product_loop->have_posts()) {
                     ?>
                     <?php echo $before_widget; ?>
-<<<<<<< HEAD
-                    <section>
-                        <h1 class="prod-title">
-                            <?php echo esc_attr($product_title); ?>
-                        </h1>
-                        <p class="prod-title-desc"><?php echo esc_attr($product_list_desc); ?></p>
-                        <?php
-                        foreach ($manufacturer_images as $row => $value) {
-                        ?>  
-                            <a href="">
-                                <img style="border: 1px solid #ccc; margin: auto;" width="130px" height="130px" src="<?php print_r($value['item']); ?>">
-                            </a>   
-                        <?php
-                        }
-                        ?>
-                        <ul class="new-prod-slide">
-                            <?php
-                            $count = 0;
-
-                            while ($product_loop->have_posts()) : $product_loop->the_post();
-                                wc_get_template_part('content', 'product');
-                            endwhile; ?>
-                            <?php wp_reset_query(); ?>
-                        </ul>
-=======
-                    <section class="widget-product">
+                                        <section class="widget-product">
                         <div class="container">
                             <div class="wrap-header-product">
                                 <div class="row align-content-center align-items-center">
@@ -232,13 +207,11 @@ if (is_woocommerce_available()):
                                      <div class="wrap-manufacturer_images">
                                         <?php
                                         if ($manufacturer_images) {
-
                                             foreach ($manufacturer_images as $key => $value) {
                                                 ?>
                                                 <div class="item"><img src="<?php echo ($value['item']); ?>" width="150px" style="margin: auto"></div>
                                                 <?php
                                             }
-
                                         }
                                         ?>
                                     </div>
@@ -249,16 +222,14 @@ if (is_woocommerce_available()):
                             <div class="products">
                                 <div class="row">
                                     <?php
-
                                     while ($product_loop->have_posts()) : $product_loop->the_post();
                                         wc_get_template_part('content', 'product');
                                     endwhile; ?>
                                     <?php wp_reset_query(); ?>
                                 </div>
                             </div>
-                           
+
                         </div>
->>>>>>> master
                     </section>
                     <script type="text/javascript">
                         $(document).ready(function () {
