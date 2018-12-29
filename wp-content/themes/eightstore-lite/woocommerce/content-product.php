@@ -28,9 +28,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 <?php
 $classes = array();
-$classes[] = "item-prod-wrap wow flipInY";
+$classes[] = "item-prod-wrap wow flipInY col-md-4";
 ?>
-<li <?php wc_product_class($classes); ?>>
+<div <?php wc_product_class($classes); ?>>
     
     <div class="collection_combine item-img">
         <?php
@@ -67,16 +67,7 @@ $classes[] = "item-prod-wrap wow flipInY";
                 <a href="<?php the_permalink(); ?>" class="collection_title">
                     <h3><?php the_title(); ?></h3>
                 </a>
-                <div class="cart">
-                    <?php
-            /**
-             * woocommerce_after_shop_loop_item hook
-             *
-             * @hooked woocommerce_template_loop_add_to_cart - 10
-             */
-            do_action('woocommerce_after_shop_loop_item');
-            ?>
-        </div>
+              
     </div>
     <div class="price-desc">
         <?php

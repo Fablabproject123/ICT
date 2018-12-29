@@ -134,7 +134,7 @@ if (is_woocommerce_available()):
                     $manufacturer_images = get_field("image", "category_" . $product_category);
                     // print_r(get_term($product_category));
 
-                  
+
                 } elseif ($product_type == 'latest_product') {
                     $product_args = array(
                         'post_type' => 'product',
@@ -194,6 +194,7 @@ if (is_woocommerce_available()):
                 if ($product_loop->have_posts()) {
                     ?>
                     <?php echo $before_widget; ?>
+<<<<<<< HEAD
                     <section>
                         <h1 class="prod-title">
                             <?php echo esc_attr($product_title); ?>
@@ -217,7 +218,86 @@ if (is_woocommerce_available()):
                             endwhile; ?>
                             <?php wp_reset_query(); ?>
                         </ul>
+=======
+                    <section class="widget-product">
+                        <div class="container">
+                            <div class="wrap-header-product">
+                                <div class="row align-content-center align-items-center">
+                                <div class="col-2">
+                                     <h1 class="prod-title">
+                                        <?php echo esc_attr($product_title); ?>
+                                    </h1>
+                                </div>
+                                <div class="col-10">
+                                     <div class="wrap-manufacturer_images">
+                                        <?php
+                                        if ($manufacturer_images) {
+
+                                            foreach ($manufacturer_images as $key => $value) {
+                                                ?>
+                                                <div class="item"><img src="<?php echo ($value['item']); ?>" width="150px" style="margin: auto"></div>
+                                                <?php
+                                            }
+
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="products">
+                                <div class="row">
+                                    <?php
+
+                                    while ($product_loop->have_posts()) : $product_loop->the_post();
+                                        wc_get_template_part('content', 'product');
+                                    endwhile; ?>
+                                    <?php wp_reset_query(); ?>
+                                </div>
+                            </div>
+                           
+                        </div>
+>>>>>>> master
                     </section>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('.wrap-manufacturer_images').slick({
+                                slidesToShow: 6,
+                                arrows: true,
+                                dots: false,
+                                slidesToScroll: 1,
+                                responsive: [
+                                    {
+                                        breakpoint: 992,
+                                        settings: {
+                                            slidesToShow: 3,
+                                            slidesToScroll: 3,
+                                            infinite: true,
+                                            dots: true,
+                                            adaptiveHeight: true
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 768,
+                                        settings: {
+                                            slidesToShow: 1,
+                                            slidesToScroll: 1,
+                                            infinite: true,
+                                            dots: true,
+                                            adaptiveHeight: true
+                                        }
+                                    }
+                                    // You can unslick at a given breakpoint now by adding:
+                                    // settings: "unslick"
+                                    // instead of a settings object
+                                ]
+                            });
+                             $('html, body').animate({
+                                scrollTop: $(".fa-envelope").offset().top
+                            }, 0);
+                        })
+                    </script>
                     <?php echo $after_widget; ?>
                     <?php
                 } else {

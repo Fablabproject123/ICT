@@ -151,9 +151,11 @@
         <div class="store-menu" style="clear: both;">
             <div class="store-wrapper">
                 <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <button class="menu-toggle" aria-controls="primary-menu"
-                            aria-expanded="false"><?php esc_html_e('', 'eightstore-lite'); ?></button>
-                    <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+                    <div class="container">
+                        <button class="menu-toggle" aria-controls="primary-menu"
+                                aria-expanded="false"><?php esc_html_e('', 'eightstore-lite'); ?></button>
+                        <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+                    </div>
                 </nav><!-- #site-navigation -->
                 <div class="clear"></div>
             </div>
