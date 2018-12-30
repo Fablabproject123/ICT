@@ -11,66 +11,48 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
-  * @package WooCommerce/Templates
+ * @package WooCommerce/Templates
  * @version 3.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
 global $product;
 
 // Ensure visibility
-if ( empty( $product ) || ! $product->is_visible() ) {
+if (empty($product) || !$product->is_visible()) {
     return;
 }
 ?>
 <?php
 $classes = array();
-$classes[] = "item-prod-wrap wow flipInY col-md-3 product";
+$classes[] = "col-md-3 product";
 ?>
 <div <?php wc_product_class($classes); ?>>
-    
-    <div class="collection_combine item-img">
-        <?php
-            /**
-             * woocommerce_before_shop_loop_item hook.
-             *
-             * @hooked woocommerce_template_loop_product_link_open - 10
-             */
-            do_action( 'woocommerce_before_shop_loop_item' );
 
-            add_action('woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_link_close');
-            remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close');
-            ?>
+    <div class="collection_combine item-img">
+
+        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="w-100">
         <?php
-            /**
-             * woocommerce_before_shop_loop_item_title hook.
-             *
-             * @hooked woocommerce_show_product_loop_sale_flash - 10
-             * @hooked woocommerce_template_loop_product_thumbnail - 10
-             */
-            do_action( 'woocommerce_before_shop_loop_item_title' );
+        if (function_exists('YITH_WCWL')) {
+            $url = add_query_arg('add_to_wishlist', $product->get_id());
             ?>
+            <a class="item-wishlist" href="<?php echo $url ?>"><i class="fa fa-heart-o"><span>Whishlist</span></i></a>
             <?php
-            if (function_exists('YITH_WCWL')) {
-                $url = add_query_arg('add_to_wishlist', $product->get_id());
-                ?>
-                <a class="item-wishlist" href="<?php echo $url ?>"><i class="fa fa-heart-o"><span>Whishlist</span></i></a>
-                <?php
-            }
-            ?>
-        </div>
-        <div class="collection_desc clearfix">
-            <div class="title-cart">
-                <a href="<?php the_permalink(); ?>" class="collection_title">
-                    <h3 class="name"><?php the_title(); ?></h3>
-                </a>
-              
+        }
+        ?>
     </div>
-    <div class="price-desc">
-        <?php
+    <div class="collection_desc clearfix">
+        <div class="title-cart">
+            <a href="<?php the_permalink(); ?>" class="collection_title">
+                <h3 class="name"><?php the_title(); ?></h3>
+            </a>
+
+        </div>
+        <div class="price-desc">
+            <?php
             /**
              * woocommerce_after_shop_loop_item_title hook
              *
@@ -82,4 +64,4 @@ $classes[] = "item-prod-wrap wow flipInY col-md-3 product";
             ?>
         </div>
     </div>
-</li>
+</div>
