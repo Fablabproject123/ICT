@@ -1476,30 +1476,16 @@ SECTION BELOW SLIDER
 #section-below-slider {
 	margin-bottom: 40px;
 }
-#section-below-slider .block-large, #section-below-slider .small-wrap {
-	float: left;
-	margin-right: 30px;
-	width: 31.6%;
-	height: 380px;
-	line-height: 0;
-}
+
 #section-below-slider .block-large:last-child {
 	margin-right: 0;
 }
-#section-below-slider .block-large, #section-below-slider .block-small{
-	overflow-x: hidden;
-	box-shadow: 0 0 5px #ccc;
-	border: 5px solid #fff;
-}
 #section-below-slider .block-large .block-title {
-	background: rgba(255, 189, 10, 0.7) none repeat scroll 0 0;
 	font-family: 'Montserrat-SemiBold';
-	color: #000000;
-	font-size: 1rem;
+	color: #333333;
+	font-size: .8rem;
 	margin: 0 auto;
 	padding: 20px 0;
-	text-align: center;
-	text-transform: uppercase;
 	line-height: 1;
 }
 #section-below-slider .small-wrap .block-title {
@@ -1514,24 +1500,36 @@ SECTION BELOW SLIDER
 	width: 40%;
 	line-height: 1;
 }
-#section-below-slider .small-wrap .block-small {
-	margin-bottom: 23px;
-	height: 178px;
+#section-below-slider .wrapper-post{
+	position: relative;
 }
-#section-below-slider .small-wrap .block-small:last-child {
-	margin-bottom: 0;
+#section-below-slider .wrapper-post .pre-custom, #section-below-slider .wrapper-post .next-custom{
+	position: absolute;
+	top: -40px;
+	color: #FFF;
+	font-size: 14px;
+	margin: 5px;
+	padding: 5px 10px;
+	background: #D6D6D6;
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 3px;
 }
-#section-below-slider .block-large img, #section-below-slider .block-small img{
-	transition: all ease 0.3s;
-	-webkit-transition: all ease 0.3s;
-	-ms-transition: all ease 0.3s;
+#section-below-slider .wrapper-post .pre-custom{
+	right: 30px;
+
 }
-#section-below-slider .block-large:hover img, #section-below-slider .block-small:hover img{
-	
-	transform: scale(1.2);
-	-webkit-transform: scale(1.2);
-	-ms-transform: scale(1.2);
+#section-below-slider .wrapper-post .next-custom{
+	right: 0;
 }
+/*#section-below-slider .small-wrap .block-small {*/
+	/*margin-bottom: 23px;*/
+	/*height: 178px;*/
+/*}*/
+/*#section-below-slider .small-wrap .block-small:last-child {*/
+	/*margin-bottom: 0;*/
+/*}*/
+
 /*
 .new-prod-slide .slick-slide{
 	padding: 0;
@@ -3815,11 +3813,11 @@ p.woocommerce-result-count {
 }
 .sale-off span {
 	font-family: 'Montserrat-SemiBold';
-	font-size: 1rem;
+	font-size: .9rem;
 	border: none;
     border-top: 3px solid #0354a9;
     color: #000000;
     background: transparent;
-    padding: 3px 5px;
+    padding: 5px 5px;
     text-transform: uppercase;
 }

@@ -185,38 +185,37 @@ if (is_woocommerce_available()):
                 }
 
 
-
-
                 $product_loop = new WP_Query($product_args);
                 if ($product_loop->have_posts()) {
                     ?>
                     <?php echo $before_widget; ?>
-                                        <section class="widget-product">
+                    <section class="widget-product">
                         <div class="container">
                             <div class="wrap-header-product">
                                 <div class="row align-content-center align-items-center">
-                                <div class="col-2">
-                                     <h1 class="prod-title">
-                                        <?php echo esc_attr($product_title); ?>
-                                    </h1>
-                                </div>
-                                <div class="col-10">
-                                     <div class="wrap-manufacturer_images">
-                                        <?php
-                                        if ($manufacturer_images) {
-                                            foreach ($manufacturer_images as $key => $value) {
-                                                ?>
-                                                <div class="item"><img src="<?php echo ($value['item']); ?>" width="150px" style="margin: auto"></div>
-                                                <?php
+                                    <div class="col-2">
+                                        <h1 class="prod-title">
+                                            <?php echo esc_attr($product_title); ?>
+                                        </h1>
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="wrap-manufacturer_images">
+                                            <?php
+                                            if ($manufacturer_images) {
+                                                foreach ($manufacturer_images as $key => $value) {
+                                                    ?>
+                                                    <div class="item"><img src="<?php echo($value['item']); ?>"
+                                                                           width="150px" style="margin: auto"></div>
+                                                    <?php
+                                                }
                                             }
-                                        }
-                                        ?>
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            </div>
-
-                            <div class="products">
+                            <?php $name = $instance['product_type'] . $instance['product_category']; ?>
+                            <div class="products wrapper<?php echo $name ?>">
                                 <div class="row">
                                     <?php
                                     while ($product_loop->have_posts()) : $product_loop->the_post();
@@ -225,12 +224,83 @@ if (is_woocommerce_available()):
                                     <?php wp_reset_query(); ?>
                                 </div>
                             </div>
-                            <div class="">Xem them</div>
+                            <div class="load-more <?php echo $name; ?>">
+                                XEM THÊM SẢN PHẨM
+                            </div>
 
                         </div>
                     </section>
                     <script type="text/javascript">
                         $(document).ready(function () {
+                            var page<?php echo $name; ?> = 2;
+                            var total<?php echo $name; ?> = <?php echo $product_loop->found_posts ?>;
+                            var post_per_page<?php echo $name; ?> =  <?php echo $product_number ?>;
+                            $(".<?php echo $name; ?>").click(function () {
+                                $.ajax({
+                                    type: "post",
+                                    dataType: "json",
+                                    url: '<?php echo admin_url('admin-ajax.php');?>',
+                                    data: {
+                                        action: "loadingMoreProduct",
+                                        instance: <?php echo json_encode($instance); ?>,
+                                        page: page<?php echo $name; ?>
+                                    },
+                                    context: this,
+                                    beforeSend: function () {
+                                        $(".<?php echo $name; ?>").button('loading')
+                                    },
+                                    afterSend: function () {
+                                        $(".<?php echo $name; ?>").button('reset')
+                                    },
+                                    success: function (response) {
+
+                                        if (response.success) {
+                                            let json = response.data;
+                                            let html = "";
+
+                                            for (let product of json) {
+                                                let price_html = "";
+                                                if(product.is_price_number) {
+                                                    price_html = `<div class="text">${product.price}</div>`
+                                                } else {
+                                                    price_html = `<div class="text">Liên hệ</div>`
+                                                }
+                                                html += `<div class="col-md-3 product post-678 product type-product status-publish product_cat-autonics first instock shipping-taxable product-type-simple">
+
+                                                            <div class="collection_combine item-img">
+
+                                                                <img src="${product.image_url}" alt="" class="w-100">
+                                                                    </div>
+                                                            <div class="collection_desc clearfix">
+                                                                <div class="title-cart">
+                                                                    <a href="${product.url}" class="collection_title">
+                                                                        <h3 class="name">${product.title}</h3>
+                                                                    </a>
+
+                                                                </div>
+                                                                <div class="price-desc">
+                                                                    ${price_html}
+                                                                </div>
+                                                            </div>
+                                                        </div>`;
+                                            }
+                                            $('.wrapper<?php echo $name; ?> .row').append(html)
+
+
+                                            if(page<?php echo $name; ?> * post_per_page<?php echo $name; ?> >= total<?php echo $name; ?>) {
+                                                $(".<?php echo $name; ?>").css('display', 'none')
+                                            }
+                                        }
+                                        else {
+                                            alert('Đã có lỗi xảy ra');
+                                        }
+                                    },
+                                    error: function (jqXHR, textStatus, errorThrown) {
+                                        console.log('The following error occured: ' + textStatus, errorThrown);
+                                    }
+                                })
+                                return false;
+                            })
                             $('.wrap-manufacturer_images').slick({
                                 slidesToShow: 6,
                                 arrows: true,
@@ -257,12 +327,9 @@ if (is_woocommerce_available()):
                                             adaptiveHeight: true
                                         }
                                     }
-                                    // You can unslick at a given breakpoint now by adding:
-                                    // settings: "unslick"
-                                    // instead of a settings object
                                 ]
                             });
-                             $('html, body').animate({
+                            $('html, body').animate({
                                 scrollTop: $(".fa-envelope").offset().top
                             }, 0);
                         })

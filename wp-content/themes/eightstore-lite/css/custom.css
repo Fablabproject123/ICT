@@ -10,7 +10,6 @@ body {
     font-size: 14px;
     color: #333333;
     font-family: 'Montserrat', Arial, sans-serif;
-
 }
 /* menu top */
 .header-callto {
@@ -131,6 +130,7 @@ footer {
     color: #999999;
     word-spacing: 2px;
     line-height: 1.5rem;
+    font-size: .8rem;
 }
 footer #section-footer .title p{
     color: #ffffff;
@@ -145,4 +145,28 @@ footer #section-footer .social-icons a{
 footer #section-footer .social-icons a i{
     font-size: 1rem;
     color: #a8a2a2
+}
+.widget-product .load-more {
+    cursor: pointer;
+    margin: 2rem 0;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #f30;
+    padding: 10px 0;
+    font-family: 'Montserrat-SemiBold';
+    display: block;
+    text-align: center;
+}
+.wrap-header-product{
+    margin-bottom: 1rem;
+}
+.product{
+    box-sizing: border-box;
+    border: 5px solid transparent;
+    transition: all .5s;
+}
+.product:hover{
+    box-shadow: 0 0 5px #ccc;
+    border-color: #fff;
 }

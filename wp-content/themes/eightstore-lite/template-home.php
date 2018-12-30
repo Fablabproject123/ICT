@@ -40,51 +40,69 @@ get_header(); ?>
                         ));
                         ?>
                         <h3 class="sale-off"><span><?php echo $category_name; ?></span></h3>
-                        <div class="row">
-                        <?php
-                        if ($loop->have_posts()) {
-                            $i = 1;
-                            while ($loop->have_posts()) {
-                                $loop->the_post();
-                                if ($i == 1 || $i == 4) {
+                        <div class="row wrapper-post">
+                            <?php
+                            if ($loop->have_posts()) {
+                                $i = 1;
+                                while ($loop->have_posts()) {
+                                    $loop->the_post();
                                     ?>
                                     <div class="block-large col-md-4">
                                         <a href="<?php the_permalink(); ?>">
                                             <?php
                                             $image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'eightstore-promo-large', false);
                                             ?>
-                                            
-                                            <img width="100%" src="<?php echo esc_url($image[0]); ?>"
-                                                 alt="<?php the_title_attribute(); ?>"/>
 
-                                            <div class="block-title"><?php the_title(); ?></div>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <img width="100%" src="<?php echo esc_url($image[0]); ?>"
+                                                         alt="<?php the_title_attribute(); ?>"/>
+                                                </div>
+
+                                                <div class="block-title col-md-7"><?php the_title(); ?></div>
+                                            </div>
                                         </a>
                                     </div>
                                     <?php
-                                } else {
-                                    if ($i == 2) { ?><div class="small-wrap"><?php }
-                                    ?>
-                                    <div class="block-small">
-                                        <a href="<?php the_permalink(); ?>">
-                                            <?php
-                                            $image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'eightstore-promo-small', false);
-                                            ?>
-                                            <img src="<?php echo esc_url($image[0]); ?>"
-                                                 alt="<?php the_title_attribute(); ?>"/>
-                                            <div class="block-title"><?php the_title(); ?></div>
-                                        </a>
-                                    </div>
-                                    <?php
-                                    if ($i == 3) { ?></div><?php }
                                 }
-                                $i++;
                             }
-                        }
-                        wp_reset_postdata();
-                        ?>
+                            wp_reset_postdata();
+                            ?>
                         </div>
                     </div>
                 </section>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('.wrapper-post').slick({
+                            slidesToShow: 3,
+                            arrows: true,
+                            dots: false,
+                            nextArrow: '<div class="next-custom"><i class="fa fa-angle-right"></i></div>',
+                            prevArrow: '<div class="pre-custom"><i class="fa fa-angle-left"></i></div>',
+                            slidesToScroll: 1,
+                            responsive: [
+                                {
+                                    breakpoint: 992,
+                                    settings: {
+                                        slidesToShow: 2,
+                                        slidesToScroll: 1,
+                                        infinite: true,
+                                        adaptiveHeight: true
+                                    }
+                                },
+                                {
+                                    breakpoint: 768,
+                                    settings: {
+                                        slidesToShow: 1,
+                                        slidesToScroll: 1,
+                                        infinite: true,
+                                        adaptiveHeight: true
+                                    }
+                                }
+                            ]
+                        });
+                    })
+                </script>
                 <?php
             }
             ?>

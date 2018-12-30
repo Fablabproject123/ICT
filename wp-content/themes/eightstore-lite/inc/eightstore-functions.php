@@ -571,19 +571,13 @@ if(is_woocommerce_available()):
 
 	}
 
-	function eightstore_lite_fonts_cb(){
-		echo "<link href='//fonts.googleapis.com/css?family=Arimo:400,700|Open+Sans:400,700,600italic,300|Roboto+Condensed:300,400,700|Roboto:300,400,700|Slabo+27px|Oswald:400,300,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|PT+Sans:400,700,400italic,700italic|Droid+Sans:400,700|Raleway:400,100,200,300,500,600,700,800,900|Droid+Serif:400,700,400italic,700italic|Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Montserrat:400,700|Roboto+Slab:400,100,300,700|Merriweather:400italic,400,900,300italic,300,700,700italic,900italic|Lora:400,700,400italic,700italic|PT+Sans+Narrow:400,700|Bitter:400,700,400italic|Lobster|Yanone+Kaffeesatz:400,200,300,700|Arvo:400,700,400italic,700italic|Oxygen:400,300,700|Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900|Dosis:200,300,400,500,600,700,800|Ubuntu+Condensed|Playfair+Display:400,700,900,400italic,700italic,900italic|Cabin:400,500,600,700,400italic,500italic,600italic|Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>";
-	}
-	add_action('wp_footer', 'eightstore_lite_fonts_cb');
-
-
 //	Tuan
+add_action( 'wp_ajax_loadingMoreProduct', 'loadingMoreProduct' );
 add_action( 'wp_ajax_nopriv_loadingMoreProduct', 'loadingMoreProduct' );
 function loadingMoreProduct() {
-
-
+    $data = [];
     if ($_POST['instance']) {
-        $instance = json_decode($_POST['instance']);
+        $instance = $_POST['instance'];
         $product_title = $instance['product_title'];
         if (isset($instance['product_list_desc'])) {
             $product_list_desc = $instance['product_list_desc'];
@@ -603,17 +597,16 @@ function loadingMoreProduct() {
                     'terms' => $product_category
                 )),
                 'posts_per_page' => $product_number,
-                'page'  => $_POST['page']
+                'paged'  => $_POST['page']
             );
             //
             $manufacturer_images = get_field("image", "category_" . $product_category);
             // print_r(get_term($product_category));
-
-
         } elseif ($product_type == 'latest_product') {
             $product_args = array(
                 'post_type' => 'product',
-                'posts_per_page' => $product_number
+                'posts_per_page' => $product_number,
+                'paged'  => $_POST['page']
             );
         } elseif ($product_type == 'upsell_product') {
             $product_args = array(
@@ -621,13 +614,15 @@ function loadingMoreProduct() {
                 'posts_per_page' => 10,
                 'meta_key' => 'total_sales',
                 'orderby' => 'meta_value_num',
-                'posts_per_page' => $product_number
+                'posts_per_page' => $product_number,
+                'paged'  => $_POST['page']
             );
         } elseif ($product_type == 'feature_product') {
             $product_visibility_term_ids = wc_get_product_visibility_term_ids();
             $product_args = array(
                 'post_type' => 'product',
                 'posts_per_page' => $product_number,
+                'paged'  => $_POST['page'],
                 'meta_query' => array(),
                 'tax_query' => array(
                     'relation' => 'AND',
@@ -658,14 +653,27 @@ function loadingMoreProduct() {
                 )
             );
         }
-        $data = [];
+
         $product_loop = new WP_Query($product_args);
         if ($product_loop->have_posts()) {
-            $data[] = array(
-              'title'   => get_title()
-            );
+            while ($product_loop->have_posts()) : $product_loop->the_post();
+
+
+                $price = get_post_meta( get_the_ID(), '_price', true ) == 0 ? "Liên hệ" : get_post_meta( get_the_ID(), '_price', true ) . " " . get_woocommerce_currency_symbol();
+                $is_price_number = get_post_meta( get_the_ID(), '_price', true ) == 0 ? false : true;
+                $data[] = array(
+                    'title' => get_the_title(),
+                    'url'   => get_the_permalink(),
+                    'image_url' => get_the_post_thumbnail_url(),
+                    'price'     => $price,
+                    'is_price_number'   => $is_price_number
+                );
+            endwhile;
         }
     }
-    wp_send_json_success('Chào mừng bạn đến với ');
-    die();//bắt buộc phải có khi kết thúc
+
+
+    wp_send_json_success($data);
+    die();
 }
+
