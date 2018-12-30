@@ -12,7 +12,7 @@ $archive_page_layout = get_theme_mod('archive_page_layout');
 ?>
 <div class="store-wrapper">
 	
-	<main id="main" class="site-main <?php echo esc_attr($archive_page_layout); ?>" role="main">
+	<main id="main" class="site-main container <?php echo esc_attr($archive_page_layout); ?>" role="main">
 		<?php if ($archive_page_layout == 'sidebar-both'): ?>
 			<div id="primary-wrap" class="clearfix">
 			<?php endif; ?>
