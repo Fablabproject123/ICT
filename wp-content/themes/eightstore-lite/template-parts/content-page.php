@@ -13,7 +13,7 @@
 	</header><!-- .entry-header -->
 	<?php if(has_post_thumbnail()): ?>
 		<div class="post-thumbnail">
-			<?php the_post_thumbnail('full'); ?>
+            <img src="<?php echo get_the_post_thumbnail_url() ?>" class="w-100">
 		</div>
 	<?php endif; ?>
 	<div class="entry-content">
