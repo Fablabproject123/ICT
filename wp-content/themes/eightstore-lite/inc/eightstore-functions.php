@@ -575,3 +575,91 @@ if(is_woocommerce_available()):
 		echo "<link href='//fonts.googleapis.com/css?family=Arimo:400,700|Open+Sans:400,700,600italic,300|Roboto+Condensed:300,400,700|Roboto:300,400,700|Slabo+27px|Oswald:400,300,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|PT+Sans:400,700,400italic,700italic|Droid+Sans:400,700|Raleway:400,100,200,300,500,600,700,800,900|Droid+Serif:400,700,400italic,700italic|Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Montserrat:400,700|Roboto+Slab:400,100,300,700|Merriweather:400italic,400,900,300italic,300,700,700italic,900italic|Lora:400,700,400italic,700italic|PT+Sans+Narrow:400,700|Bitter:400,700,400italic|Lobster|Yanone+Kaffeesatz:400,200,300,700|Arvo:400,700,400italic,700italic|Oxygen:400,300,700|Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900|Dosis:200,300,400,500,600,700,800|Ubuntu+Condensed|Playfair+Display:400,700,900,400italic,700italic,900italic|Cabin:400,500,600,700,400italic,500italic,600italic|Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>";
 	}
 	add_action('wp_footer', 'eightstore_lite_fonts_cb');
+
+
+//	Tuan
+add_action( 'wp_ajax_nopriv_loadingMoreProduct', 'loadingMoreProduct' );
+function loadingMoreProduct() {
+
+
+    if ($_POST['instance']) {
+        $instance = json_decode($_POST['instance']);
+        $product_title = $instance['product_title'];
+        if (isset($instance['product_list_desc'])) {
+            $product_list_desc = $instance['product_list_desc'];
+        } else {
+            $product_list_desc = "";
+        }
+        $product_type = $instance['product_type'];
+        $product_category = $instance['product_category'];
+        $product_number = $instance['number_of_prod'];
+        $product_args = '';
+        $manufacturer_images = array();
+        if ($product_type == 'category') {
+            $product_args = array(
+                'post_type' => 'product',
+                'tax_query' => array(array('taxonomy' => 'product_cat',
+                    'field' => 'id',
+                    'terms' => $product_category
+                )),
+                'posts_per_page' => $product_number
+            );
+            //
+            $manufacturer_images = get_field("image", "category_" . $product_category);
+            // print_r(get_term($product_category));
+
+
+        } elseif ($product_type == 'latest_product') {
+            $product_args = array(
+                'post_type' => 'product',
+                'posts_per_page' => $product_number
+            );
+        } elseif ($product_type == 'upsell_product') {
+            $product_args = array(
+                'post_type' => 'product',
+                'posts_per_page' => 10,
+                'meta_key' => 'total_sales',
+                'orderby' => 'meta_value_num',
+                'posts_per_page' => $product_number
+            );
+        } elseif ($product_type == 'feature_product') {
+            $product_visibility_term_ids = wc_get_product_visibility_term_ids();
+            $product_args = array(
+                'post_type' => 'product',
+                'posts_per_page' => $product_number,
+                'meta_query' => array(),
+                'tax_query' => array(
+                    'relation' => 'AND',
+                ),
+            );
+            $product_args['tax_query'][] = array(
+                'taxonomy' => 'product_visibility',
+                'field' => 'term_taxonomy_id',
+                'terms' => $product_visibility_term_ids['featured'],
+            );
+        } elseif ($product_type == 'on_sale') {
+            $product_args = array(
+                'post_type' => 'product',
+                'meta_query' => array(
+                    'relation' => 'OR',
+                    array( // Simple products type
+                        'key' => '_sale_price',
+                        'value' => 0,
+                        'compare' => '>',
+                        'type' => 'numeric'
+                    ),
+                    array( // Variable products type
+                        'key' => '_min_variation_sale_price',
+                        'value' => 0,
+                        'compare' => '>',
+                        'type' => 'numeric'
+                    )
+                )
+            );
+        }
+        $product_loop = new WP_Query($product_args);
+        print_r($product_loop);
+    }
+    wp_send_json_success('Chào mừng bạn đến với ');
+    die();//bắt buộc phải có khi kết thúc
+}
