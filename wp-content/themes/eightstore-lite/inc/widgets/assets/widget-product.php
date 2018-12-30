@@ -129,7 +129,7 @@ if (is_woocommerce_available()):
                             'field' => 'id',
                             'terms' => $product_category
                         )),
-                        'posts_per_page' => $product_number
+                        'posts_per_page' => $product_number,
                     );
                     //
                     $manufacturer_images = get_field("image", "category_" . $product_category);

@@ -602,7 +602,8 @@ function loadingMoreProduct() {
                     'field' => 'id',
                     'terms' => $product_category
                 )),
-                'posts_per_page' => $product_number
+                'posts_per_page' => $product_number,
+                'page'  => $_POST['page']
             );
             //
             $manufacturer_images = get_field("image", "category_" . $product_category);
