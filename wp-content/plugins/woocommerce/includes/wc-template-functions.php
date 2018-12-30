@@ -2520,7 +2520,7 @@ if ( ! function_exists( 'woocommerce_form_field' ) ) {
 		$field           = '';
 		$label_id        = $args['id'];
 		$sort            = $args['priority'] ? $args['priority'] : '';
-		$field_container = '<p class="form-row %1$s" id="%2$s" data-priority="' . esc_attr( $sort ) . '">%3$s</p>';
+		$field_container = '<div class="form-row %1$s form-group" id="%2$s" data-priority="' . esc_attr( $sort ) . '">%3$s</div>';
 
 		switch ( $args['type'] ) {
 			case 'country':
@@ -2534,7 +2534,7 @@ if ( ! function_exists( 'woocommerce_form_field' ) ) {
 
 				} else {
 
-					$field = '<select name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" class="country_to_state country_select ' . esc_attr( implode( ' ', $args['input_class'] ) ) . '" ' . implode( ' ', $custom_attributes ) . '><option value="">' . esc_html__( 'Select a country&hellip;', 'woocommerce' ) . '</option>';
+					$field = '<select name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" class="country_to_state country_select form-control' . esc_attr( implode( ' ', $args['input_class'] ) ) . '" ' . implode( ' ', $custom_attributes ) . '><option value="">' . esc_html__( 'Select a country&hellip;', 'woocommerce' ) . '</option>';
 
 					foreach ( $countries as $ckey => $cvalue ) {
 						$field .= '<option value="' . esc_attr( $ckey ) . '" ' . selected( $value, $ckey, false ) . '>' . $cvalue . '</option>';
@@ -2597,7 +2597,7 @@ if ( ! function_exists( 'woocommerce_form_field' ) ) {
 			case 'email':
 			case 'url':
 			case 'tel':
-				$field .= '<input type="' . esc_attr( $args['type'] ) . '" class="input-text ' . esc_attr( implode( ' ', $args['input_class'] ) ) . '" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '"  value="' . esc_attr( $value ) . '" ' . implode( ' ', $custom_attributes ) . ' />';
+				$field .= '<input type="' . esc_attr( $args['type'] ) . '" class="input-text ' . esc_attr( implode( ' ', $args['input_class'] ) ) . ' form-control" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '"  value="' . esc_attr( $value ) . '" ' . implode( ' ', $custom_attributes ) . ' />';
 
 				break;
 			case 'select':
@@ -2642,13 +2642,12 @@ if ( ! function_exists( 'woocommerce_form_field' ) ) {
 				$field_html .= '<label for="' . esc_attr( $label_id ) . '" class="' . esc_attr( implode( ' ', $args['label_class'] ) ) . '">' . $args['label'] . $required . '</label>';
 			}
 
-			$field_html .= '<span class="woocommerce-input-wrapper">' . $field;
+			$field_html .= $field;
 
 			if ( $args['description'] ) {
 				$field_html .= '<span class="description" id="' . esc_attr( $args['id'] ) . '-description" aria-hidden="true">' . wp_kses_post( $args['description'] ) . '</span>';
 			}
 
-			$field_html .= '</span>';
 
 			$container_class = esc_attr( implode( ' ', $args['class'] ) );
 			$container_id    = esc_attr( $args['id'] ) . '_field';
