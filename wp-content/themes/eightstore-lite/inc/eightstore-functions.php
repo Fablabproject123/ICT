@@ -658,8 +658,13 @@ function loadingMoreProduct() {
                 )
             );
         }
+        $data = [];
         $product_loop = new WP_Query($product_args);
-        print_r($product_loop);
+        if ($product_loop->have_posts()) {
+            $data[] = array(
+              'title'   => get_title()
+            );
+        }
     }
     wp_send_json_success('Chào mừng bạn đến với ');
     die();//bắt buộc phải có khi kết thúc

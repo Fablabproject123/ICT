@@ -22,8 +22,8 @@ if (is_woocommerce_available()):
         public function __construct()
         {
             parent::__construct(
-                'eightstore_lite_product', 'ES: WC Product Category', array(
-                    'description' => __('Category with woocommerce products', 'eightstore-lite')
+                'eightstore_lite_product', 'ES: WC Product Slider', array(
+                    'description' => __('Slider with woocommerce products', 'eightstore-lite')
                 )
             );
         }
@@ -108,7 +108,6 @@ if (is_woocommerce_available()):
 
         public function widget($args, $instance)
         {
-            print_r($instance);
             extract($args);
             if ($instance) {
                 $product_title = $instance['product_title'];
@@ -129,7 +128,7 @@ if (is_woocommerce_available()):
                             'field' => 'id',
                             'terms' => $product_category
                         )),
-                        'posts_per_page' => $product_number,
+                        'posts_per_page' => $product_number
                     );
                     //
                     $manufacturer_images = get_field("image", "category_" . $product_category);
@@ -187,6 +186,7 @@ if (is_woocommerce_available()):
 
 
 
+
                 $product_loop = new WP_Query($product_args);
                 if ($product_loop->have_posts()) {
                     ?>
@@ -225,44 +225,12 @@ if (is_woocommerce_available()):
                                     <?php wp_reset_query(); ?>
                                 </div>
                             </div>
-                            <div class="<?php echo $instance['product_type'] . '-' . $instance['product_category']; ?>">Xem them</div>
+                            <div class="">Xem them</div>
 
                         </div>
                     </section>
                     <script type="text/javascript">
                         $(document).ready(function () {
-                            var page<?php echo $instance['product_type'] . $instance['product_category']; ?> = '1';
-                            $(".<?php echo $instance['product_type'] . '-' . $instance['product_category']; ?>").click(function(){
-                                $.ajax({
-                                    type : "post", //Phương thức truyền post hoặc get
-                                    dataType : "json", //Dạng dữ liệu trả về xml, json, script, or html
-                                    url : '<?php echo admin_url('admin-ajax.php');?>', //Đường dẫn chứa hàm xử lý dữ liệu. Mặc định của WP như vậy
-                                    data : {
-                                        action: "loadingMoreProduct", //Tên action
-                                        instance : <?php echo json_encode($instance); ?>,//Biến truyền vào xử lý. $_POST['website']
-                                        page: page<?php echo $instance['product_type'] . $instance['product_category']; ?>
-                                    },
-                                    context: this,
-                                    beforeSend: function(){
-                                        //Làm gì đó trước khi gửi dữ liệu vào xử lý
-                                    },
-                                    success: function(response) {
-                                        //Làm gì đó khi dữ liệu đã được xử lý
-                                        if(response.success) {
-                                            alert(response.data);
-                                            page<?php echo $instance['product_type'] . $instance['product_category']; ?>++;
-                                        }
-                                        else {
-                                            alert('Đã có lỗi xảy ra');
-                                        }
-                                    },
-                                    error: function( jqXHR, textStatus, errorThrown ){
-                                        //Làm gì đó khi có lỗi xảy ra
-                                        console.log( 'The following error occured: ' + textStatus, errorThrown );
-                                    }
-                                })
-                                return false;
-                            })
                             $('.wrap-manufacturer_images').slick({
                                 slidesToShow: 6,
                                 arrows: true,
