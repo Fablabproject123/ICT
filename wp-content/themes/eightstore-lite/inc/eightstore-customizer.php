@@ -308,31 +308,6 @@ function eightstore_lite_custom_customize_register( $wp_customize ) {
         'panel' => 'social_setting',
     ));
 
-    //socail setting in header
-    $wp_customize->add_setting('social_icons_in_header', array(
-        'default' => '0',
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'eightstore_lite_sanitize_integer',
-    ));
-
-    $wp_customize->add_control(new Eightstore_lite_WP_Customize_Switch_Control($wp_customize,'social_icons_in_header', array(
-        'type' => 'switch',
-        'label' => __('Display Social Icons in Header', 'eightstore-lite'),
-        'section' => 'social_setting',
-    )));
-
-    $wp_customize->add_setting('social_icons_in_footer', array(
-        'default' => '0',
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'eightstore_lite_sanitize_integer',
-    ));
-
-    $wp_customize->add_control(new Eightstore_lite_WP_Customize_Switch_Control($wp_customize,'social_icons_in_footer', array(
-        'type' => 'switch',
-        'label' => __('Display Social Icons in Footer', 'eightstore-lite'),
-        'section' => 'social_setting',
-    )));
-
     //social facebook link
     $wp_customize->add_setting('social_facebook', array(
         'default' => '',
