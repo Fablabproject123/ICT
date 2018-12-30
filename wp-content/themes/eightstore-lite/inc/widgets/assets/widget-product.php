@@ -22,8 +22,8 @@ if (is_woocommerce_available()):
         public function __construct()
         {
             parent::__construct(
-                'eightstore_lite_product', 'ES: WC Product Slider', array(
-                    'description' => __('Slider with woocommerce products', 'eightstore-lite')
+                'eightstore_lite_product', 'ES: WC Product Category', array(
+                    'description' => __('Category with woocommerce products', 'eightstore-lite')
                 )
             );
         }

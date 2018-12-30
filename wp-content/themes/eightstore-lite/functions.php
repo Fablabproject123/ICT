@@ -126,7 +126,7 @@ function eightstore_lite_widgets_init() {
 		) );
 
     register_sidebar( array(
-        'name'          => esc_html__( 'Các Liên Header', 'eightstore-lite' ),
+        'name'          => esc_html__( 'Các Liên Kết Header', 'eightstore-lite' ),
         'id'            => 'widget-header-link',
         'description'   => 'Các Liên Header',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
