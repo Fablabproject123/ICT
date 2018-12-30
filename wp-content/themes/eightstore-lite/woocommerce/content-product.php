@@ -28,7 +28,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 <?php
 $classes = array();
-$classes[] = "item-prod-wrap wow flipInY col-md-4";
+$classes[] = "item-prod-wrap wow flipInY col-md-3 product";
 ?>
 <div <?php wc_product_class($classes); ?>>
     
@@ -65,7 +65,7 @@ $classes[] = "item-prod-wrap wow flipInY col-md-4";
         <div class="collection_desc clearfix">
             <div class="title-cart">
                 <a href="<?php the_permalink(); ?>" class="collection_title">
-                    <h3><?php the_title(); ?></h3>
+                    <h3 class="name"><?php the_title(); ?></h3>
                 </a>
               
     </div>

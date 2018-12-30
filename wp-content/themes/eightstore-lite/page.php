@@ -22,7 +22,7 @@ if (is_page('cart') || is_page('checkout')) {
 }
 ?>
 <div class="store-wrapper">
-	<main id="main" class="site-main clearfix <?php echo esc_attr($single_page_layout); ?>" role="main">
+	<main id="main" class="site-main container <?php echo esc_attr($single_page_layout); ?>" role="main">
 		<?php if ($single_page_layout == 'sidebar-both'): ?>
 			<div id="primary-wrap" class="clearfix">
 			<?php endif; ?>

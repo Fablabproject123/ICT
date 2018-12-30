@@ -39,7 +39,8 @@ get_header(); ?>
                             'order' => 'ASC'
                         ));
                         ?>
-                        <h3><?php echo $category_name; ?></h3>
+                        <h3 class="sale-off"><span><?php echo $category_name; ?></span></h3>
+                        <div class="row">
                         <?php
                         if ($loop->have_posts()) {
                             $i = 1;
@@ -47,13 +48,15 @@ get_header(); ?>
                                 $loop->the_post();
                                 if ($i == 1 || $i == 4) {
                                     ?>
-                                    <div class="block-large">
+                                    <div class="block-large col-md-4">
                                         <a href="<?php the_permalink(); ?>">
                                             <?php
                                             $image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'eightstore-promo-large', false);
                                             ?>
-                                            <img src="<?php echo esc_url($image[0]); ?>"
+                                            
+                                            <img width="100%" src="<?php echo esc_url($image[0]); ?>"
                                                  alt="<?php the_title_attribute(); ?>"/>
+
                                             <div class="block-title"><?php the_title(); ?></div>
                                         </a>
                                     </div>
@@ -79,6 +82,7 @@ get_header(); ?>
                         }
                         wp_reset_postdata();
                         ?>
+                        </div>
                     </div>
                 </section>
                 <?php

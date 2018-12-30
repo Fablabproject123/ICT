@@ -35,7 +35,7 @@ if ( ! is_active_sidebar( 'shop' ) ) {
 	$is_sidebar = "";
 }
 ?>
-<main id="main" class="site-main clearfix <?php echo $is_sidebar;?>" role="main">
+<main id="main" class="site-main container <?php echo $is_sidebar;?>" role="main">
 	<header class="woocommerce-products-header">
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 			<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
