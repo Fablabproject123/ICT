@@ -165,6 +165,10 @@ footer #section-footer .social-icons a i{
     box-sizing: border-box;
     border: 5px solid transparent;
     transition: all .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0;
 }
 .product:hover{
     box-shadow: 0 0 5px #ccc;
