@@ -224,9 +224,12 @@ if (is_woocommerce_available()):
                                     <?php wp_reset_query(); ?>
                                 </div>
                             </div>
-                            <div class="load-more <?php echo $name; ?>">
-                                XEM THÊM SẢN PHẨM
-                            </div>
+                            <?php if ($product_loop->found_posts > $product_number): ?>
+                                <div class="load-more <?php echo $name; ?>">
+                                    XEM THÊM SẢN PHẨM
+                                </div>
+                            <?php endif ?>
+                            
 
                         </div>
                     </section>

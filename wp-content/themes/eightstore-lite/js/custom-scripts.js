@@ -8,10 +8,6 @@ jQuery(document).ready(function($) {
 	$('.search-box .close').click(function() {
 		$('.search-box').removeClass('active');
 	});
-	$(window).on("load",function(){
-        $(".cart-box .widget_shopping_cart").mCustomScrollbar();
-    });
-
 	$('#section-product1 .new-prod-slide').slick({
 		dots: false,
 		infinite: true,
@@ -111,12 +107,6 @@ jQuery(document).ready(function($) {
         $('html,body').animate({scrollTop: 0}, 600);
     });
 
-    $(".various").fancybox({
-		'transitionIn'	: 'none',
-		'transitionOut'	: 'none',
-	});
-
-	
 	$('.cat-parent').hover(function() {
 		$(this).children('ul.children').stop(true, false, true).slideToggle(300);
 	});

@@ -140,13 +140,6 @@ add_action( 'widgets_init', 'eightstore_lite_widgets_init' );
  */
 function eightstore_lite_scripts() {
 
-	$font_args = array(
-		'family' => 'Open+Sans:400,600,700,300|Oswald:400,700,300|Dosis:400,300,500,600,700|Lato:400,300,700,900',
-		);
-//	wp_enqueue_style('eightstore-google-fonts', add_query_arg($font_args, "//fonts.googleapis.com/css"));
-	
-	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-
 	wp_enqueue_style('eightstore-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
 
 //	wp_enqueue_style( 'eightstore-animate', get_template_directory_uri() . '/css/animate.css');
