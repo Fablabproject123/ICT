@@ -6,7 +6,7 @@
  */
 
 get_header(); ?>
-<div class="store-wrapper">
+<div class="store-wrapper container">
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -15,8 +15,7 @@ get_header(); ?>
 				<header class="page-header">
 					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'eightstore-lite' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header><!-- .page-header -->
-
-				<?php /* Start the Loop */ ?>
+				<div class="row">
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php
@@ -29,7 +28,7 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
-
+				</div>
 			<?php the_posts_navigation(); ?>
 
 		<?php else : ?>

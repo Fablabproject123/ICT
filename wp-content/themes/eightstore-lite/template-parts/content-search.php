@@ -9,8 +9,9 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="col-md-3 <?php echo get_post_class(); ?> product">
 	<header class="entry-header">
+		<img class="w-100" src="<?php echo get_the_post_thumbnail_url() ?>" alt="">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
