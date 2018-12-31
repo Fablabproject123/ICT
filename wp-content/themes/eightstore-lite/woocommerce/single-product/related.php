@@ -24,7 +24,7 @@ if ( $related_products ) : ?>
 
 	<section class="related products">
 
-		<h2><span><?php _e( 'Related Products', 'eightstore-lite' ); ?></span></h2>
+		<h2><span><?php _e( 'Sản phẩm liên quan', 'eightstore-lite' ); ?></span></h2>
 
 		<?php woocommerce_product_loop_start(); ?>
 
