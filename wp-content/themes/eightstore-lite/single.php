@@ -14,44 +14,47 @@ if (empty($single_post_layout)) {
 }
 ?>
 <div class="store-wrapper">
-	<main id="main" class="site-main clearfix <?php echo esc_attr($single_post_layout); ?>" role="main">
-		<?php if ($single_post_layout == 'sidebar-both'): ?>
-			<div id="primary-wrap" class="clearfix">
-			<?php endif; ?>
-			<div id="primary" class="content-area">
-				<?php while ( have_posts() ) : the_post(); ?>
+    <div class="container">
+        <main id="main" class="site-main clearfix <?php echo esc_attr($single_post_layout); ?>" role="main">
+            <?php if ($single_post_layout == 'sidebar-both'): ?>
+            <div id="primary-wrap" class="clearfix">
+                <?php endif; ?>
+                <div id="primary" class="content-area">
+                    <?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'template-parts/content', 'single' ); ?>
+                        <?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-					<?php the_post_navigation(); ?>
+                        <?php the_post_navigation(); ?>
 
-					<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-					?>
+                        <?php
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
+                        endif;
+                        ?>
 
-				<?php endwhile; // End of the loop. ?>
-			</div><!-- #primary -->
-			<?php
-			if ($single_post_layout == 'sidebar-both' || $single_post_layout == 'sidebar-left'):
-				get_sidebar('left');
-			endif;
-			?>
+                    <?php endwhile; // End of the loop. ?>
+                </div><!-- #primary -->
+                <?php
+                if ($single_post_layout == 'sidebar-both' || $single_post_layout == 'sidebar-left'):
+                    get_sidebar('left');
+                endif;
+                ?>
 
-			<?php if ($single_post_layout == 'sidebar-both'): ?>
-			</div>
-		<?php endif; ?>
+                <?php if ($single_post_layout == 'sidebar-both'): ?>
+            </div>
+        <?php endif; ?>
 
-		<?php
-		if ($single_post_layout == 'sidebar-both' || $single_post_layout == 'sidebar-right'):
-			get_sidebar('right');
-		endif;
-		?>
+            <?php
+            if ($single_post_layout == 'sidebar-both' || $single_post_layout == 'sidebar-right'):
+                get_sidebar('right');
+            endif;
+            ?>
 
 
-	</main><!-- #main -->
+        </main><!-- #main -->
+
+    </div>
 </div>
 <?php
 			//promotional section 3 if enabled for inner pages

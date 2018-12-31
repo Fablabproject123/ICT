@@ -37,7 +37,7 @@ if(is_woocommerce_available()):
             ?>
             <div class="col-3">
                 <div class="title"><?php the_field('title', 'widget_' . $args['widget_id']); ?></div>
-                <?php the_field('lien_hệ_-_hỗ_tro', 'widget_' . $args['widget_id']); ?>
+                <?php the_field('thong_tin', 'widget_' . $args['widget_id']); ?>
             </div>
         <?php
 

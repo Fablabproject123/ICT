@@ -43,7 +43,25 @@ function eightstore_lite_custom_customize_register( $wp_customize ) {
         'description' => __('Selecting Yes will Hide Search Bar From Header','eightstore-lite'),
         'section' => 'header_search'
     )));
-
+     //Footer Copyright Text
+        $wp_customize->add_section('footer_copyright',
+            array(
+                'title' => __('Footer Copyright Area', 'eightstore-lite'),
+                'priority' => '150',
+                'panel' => 'general_setups'
+            )
+        );
+        $wp_customize->add_setting('footer_copyright_text',array(
+            'default' => '',
+            'transport' => 'postMessage',
+            'sanitize_callback' => 'eightstore_lite_sanitize_text',
+        ));
+        $wp_customize->add_control('footer_copyright_text',array(
+            'type' => 'textarea',
+            'label' => __('Footer Copyright Area Text', 'eightstore-lite'),
+            'description' => __('Enter text or Html to show in the footer.', 'eightstore-lite'),
+            'section' => 'footer_copyright',
+        ));
     //Add New Panel for topheader Setups
     $wp_customize->add_panel('home_topheader_setups',array(
         'priority' => '10',
