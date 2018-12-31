@@ -351,6 +351,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .entry-content,
 .entry-summary {
 	margin: 1em 0 0;
+	font-family: 'Montserrat-Semi';
 }
 
 .page-links {
@@ -393,7 +394,10 @@ Fonts
 .comment-content a {
 	word-wrap: break-word;
 }
+.comment-content p {
+	font-family: 'Montserrat-Semi';
 
+}
 .bypostauthor {
 	display: block;
 }
@@ -650,6 +654,7 @@ GLOBAL STYLE FOR SIDEBAR TITLE
 }
 #primary .entry-content h4,  #primary .entry-content h5 {
 	margin-top: 0;
+	font-family: 'Montserrat-Semi';
 }
 
 #secondary ul {
@@ -3317,6 +3322,8 @@ COMMENT SECTION
 }
 .comment-list li.comment article.comment-body b.fn {
 	font-size: 14px;
+	color: #fff;
+	font-family: 'Montserrat-SemiBold';
 }
 .comment-list li.comment article.comment-body .comment-author {
 	display: inline-block;
@@ -3374,7 +3381,7 @@ a.comment-reply-link:hover, .comment-form .form-submit input#submit:hover {
 	color: #fff;
 }
 .comments-area #respond {
-	background-color: #eee;
+	background-color: #b8b8b8;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 20px;
@@ -3386,6 +3393,8 @@ h3.comment-reply-title {
 	padding: 5px 20px;
 	margin: 0;
 	border-radius: 5px;
+	font-family: 'Montserrat-SemiBold';
+
 }
 .comments-area #respond .comment-form textarea{
 	background: #fff;
