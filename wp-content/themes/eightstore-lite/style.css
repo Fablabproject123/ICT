@@ -825,7 +825,7 @@ h2.site-description{
 	-webkit-transition:height 0.3s ease 0.3s, all ease 0.3s ;
 	-moz-transition:height 0.3s ease 0.3s, all ease 0.3s;
 	transition:height 0.3s ease 0.3s, all ease 0.3s;
-	background: rgba(14, 115, 114, 0.8) none repeat scroll 0 0;
+	background: rgba(73, 83, 83, 0.8) none repeat scroll 0 0;
 	top: 0;
 	height: 0;
 	opacity: 0;
@@ -853,7 +853,7 @@ h2.site-description{
 
 .search-box .search-field{
 	position: absolute;
-	top: 50%;
+	top: 47.5%;
 	height: 80px;
 	border: none;
 	border-bottom: 1px solid #ffffff;
@@ -1125,7 +1125,7 @@ h2.site-description{
 	-webkit-transform: scaleY(1);
 }
 .main-header .cart-box .product_list_widget > li {
-	border-bottom: 1px solid #0cd3d1;
+	border-bottom: 1px solid #f6b62e;
 	float: none;
 	margin-bottom: 10px;
 	max-width: inherit;
@@ -1142,7 +1142,7 @@ h2.site-description{
 	width: 50px !important;
 }
 .cart-box .woocommerce a.button {
-	background: #00908d;
+	background: #f6b62e;
 	color: #fff;
 }
 .cart-box .woocommerce a.button:hover {
@@ -3242,7 +3242,7 @@ MY ACCOUNT PAGE
 BLOG SECTION
 ---------------------------------------------*/
 article a {
-	color: #1ab1ae;
+	color: #000;
 }
 /*article .entry-footer a{
 	color: #fff;
@@ -3424,7 +3424,7 @@ SEARCH RESULT
 	margin-bottom: 0;
 }
 .search span.comments-link, .search span.cat-links {
-	background-color: #1ab1ae;
+	background-color: #f6b62e;
 	padding: 5px 10px;
 	color: #fff;
 	border-radius: 3px;
@@ -3582,7 +3582,7 @@ error404
 }
 .search-in-select {
 	position: absolute;
-	top: 44.5%;
+	top: 43%;
 	right: 17%;
 	width: 15%;
 }
@@ -3830,3 +3830,6 @@ p.woocommerce-result-count {
     padding: 5px 5px;
     text-transform: uppercase;
 }
+.cart-box a {
+	color: #fff;
+} 
