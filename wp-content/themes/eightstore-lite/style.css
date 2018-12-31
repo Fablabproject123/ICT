@@ -351,7 +351,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .entry-content,
 .entry-summary {
 	margin: 1em 0 0;
-	font-family: 'Montserrat-Semi';
+	
 }
 
 .page-links {
@@ -372,13 +372,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	text-decoration: underline;
 }
 
-/*-------------------------------------------------------------
-Fonts
---------------------------------------------------------------*/
-@font-face{
-	font-family: 'myriad pro';
-	src: url('fonts/MyriadPro-Regular_0.otf');
-}
 
 /*--------------------------------------------------------------
 ## Asides
@@ -395,7 +388,7 @@ Fonts
 	word-wrap: break-word;
 }
 .comment-content p {
-	font-family: 'Montserrat-Semi';
+	
 
 }
 .bypostauthor {
@@ -654,7 +647,7 @@ GLOBAL STYLE FOR SIDEBAR TITLE
 }
 #primary .entry-content h4,  #primary .entry-content h5 {
 	margin-top: 0;
-	font-family: 'Montserrat-Semi';
+	
 }
 
 #secondary ul {
@@ -1084,8 +1077,7 @@ h2.site-description{
 	right: 0;
 	top: 57px;
 	max-height: 400px;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding: 30px .5rem;
 	z-index: 9999;
 	opacity: 0;
 	visibility: hidden;
@@ -1129,7 +1121,6 @@ h2.site-description{
 	float: none;
 	margin-bottom: 10px;
 	max-width: inherit;
-	padding: 1em;
 }
 .main-header .cart-box .product_list_widget > li:last-child {
 	border-bottom: none;
@@ -3315,6 +3306,10 @@ COMMENT SECTION
 	border-bottom: 1px dashed #ccc;
 	margin-bottom: 20px;
 	padding-bottom: 20px;
+	color: #333333;
+}
+.comment-list .comment .comment-body .comment-meta{
+	background: none;
 }
 .comment-list li.comment article.comment-body img {
 	display: inline-block;
@@ -3322,8 +3317,8 @@ COMMENT SECTION
 	vertical-align: top;
 }
 .comment-list li.comment article.comment-body b.fn {
-	font-size: 14px;
-	color: #fff;
+	font-size: 1rem;
+	color: #333333;
 	font-family: 'Montserrat-SemiBold';
 }
 .comment-list li.comment article.comment-body .comment-author {
@@ -3335,7 +3330,12 @@ COMMENT SECTION
 	text-align: right;
 	width: 48%;
 }
-
+.comment-respond .logged-in-as{
+	margin-top: 1rem;
+}
+.comment-respond .comment-form{
+	padding: 1rem;
+}
 .comment-list .comment .children {
 	border: 0 none;
 	border-radius: 5px;
@@ -3367,7 +3367,7 @@ COMMENT SECTION
 	padding: 0;
 }
 .comment-list a {
-	color: #fff;
+	font-family: 'ProximaNova-Light';
 }
 .comment-list a:hover {
 	color: #f7c545;
@@ -3857,4 +3857,5 @@ p.woocommerce-result-count {
 }
 .cart-box a {
 	color: #fff;
+	text-decoration: none;
 } 

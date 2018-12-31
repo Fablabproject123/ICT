@@ -170,7 +170,32 @@ footer #section-footer .social-icons a i{
     justify-content: space-between;
     padding: 1rem 0;
 }
+
 .product:hover{
     box-shadow: 0 0 5px #ccc;
     border-color: #fff;
+}
+
+/* Single product wc */
+.product-detail.product{
+    line-height: 1.5rem;
+}
+.product-detail.product:hover{
+    box-shadow: none;
+    border-color: transparent;
+}
+.product-detail.product .text-price{
+    color: red;
+    font-family: 'Montserrat-SemiBold';
+    font-size: 0.9rem;
+    margin: .5rem 0;
+}
+footer.entry-footer{
+    padding: 1rem .5rem;
+}
+footer.entry-footer a{
+    color: #f1f1f1;
+}
+.post  .posted-on{
+    font-size: .8rem;
 }

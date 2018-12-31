@@ -116,7 +116,7 @@
 										woocommerce_login_form();
 										?>
 										<a href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') )); ?>" class="register">
-											<?php _e('Register','eightstore-lite'); ?>
+											<?php _e('Đăng kí','eightstore-lite'); ?>
 										</a>
 										<?php
 									}else{

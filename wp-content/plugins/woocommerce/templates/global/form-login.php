@@ -33,17 +33,17 @@ if ( is_user_logged_in() ) {
 
 	<p class="form-row form-row-first">
 		<label for="username"><?php esc_html_e( 'Username or email', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="text" class="input-text" name="username" id="username" autocomplete="username" />
+		<input type="text" class="input-text  w-100" name="username" id="username" autocomplete="username" />
 	</p>
 	<p class="form-row form-row-last">
 		<label for="password"><?php esc_html_e( 'Password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-		<input class="input-text" type="password" name="password" id="password" autocomplete="current-password" />
+		<input class="input-text w-100" type="password" name="password" id="password" autocomplete="current-password" />
 	</p>
 	<div class="clear"></div>
 
 	<?php do_action( 'woocommerce_login_form' ); ?>
 
-	<p class="form-row">
+	<p class="form-row mt-1">
 		<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
 		<button type="submit" class="button" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>"><?php esc_html_e( 'Login', 'woocommerce' ); ?></button>
 		<input type="hidden" name="redirect" value="<?php echo esc_url( $redirect ) ?>" />

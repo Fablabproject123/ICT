@@ -750,11 +750,11 @@ function wc_get_privacy_policy_text( $type = '' ) {
 	switch ( $type ) {
 		case 'checkout':
 			/* translators: %s privacy policy page name and link */
-			$text = get_option( 'woocommerce_checkout_privacy_policy_text', sprintf( __( 'Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s.', 'woocommerce' ), '[privacy_policy]' ) );
+			$text = get_option( 'woocommerce_checkout_privacy_policy_text', sprintf( __( 'Dữ liệu cả nhân sử dụng cho sử lý đơn hàng, hỗ trợ trải nghiệm thông qua website này, và cho các mục đích khác được mô tả trong %s.', 'woocommerce' ), '[privacy_policy]' ) );
 			break;
 		case 'registration':
 			/* translators: %s privacy policy page name and link */
-			$text = get_option( 'woocommerce_registration_privacy_policy_text', sprintf( __( 'Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s.', 'woocommerce' ), '[privacy_policy]' ) );
+			$text = get_option( 'woocommerce_registration_privacy_policy_text', sprintf( __( 'Dữ liệu cả nhân sử dụng hỗ trợ trải nghiệm thông qua website này, để quản lý truy cập tài khoản, và cho các mục đích khác được mô tả trong %s.', 'woocommerce' ), '[privacy_policy]' ) );
 			break;
 	}
 
@@ -2577,7 +2577,7 @@ if ( ! function_exists( 'woocommerce_form_field' ) ) {
 
 				break;
 			case 'textarea':
-				$field .= '<textarea name="' . esc_attr( $key ) . '" class="input-text ' . esc_attr( implode( ' ', $args['input_class'] ) ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" ' . ( empty( $args['custom_attributes']['rows'] ) ? ' rows="2"' : '' ) . ( empty( $args['custom_attributes']['cols'] ) ? ' cols="5"' : '' ) . implode( ' ', $custom_attributes ) . '>' . esc_textarea( $value ) . '</textarea>';
+				$field .= '<textarea name="' . esc_attr( $key ) . '" class="input-text ' . esc_attr( implode( ' ', $args['input_class'] ) ) . ' form-control" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" ' . ( empty( $args['custom_attributes']['rows'] ) ? ' rows="2"' : '' ) . ( empty( $args['custom_attributes']['cols'] ) ? ' cols="5"' : '' ) . implode( ' ', $custom_attributes ) . '>' . esc_textarea( $value ) . '</textarea>';
 
 				break;
 			case 'checkbox':
