@@ -47,7 +47,7 @@ if (is_woocommerce_available()):
                 </div>
 
             </div>
-            <div class="col-3 footer-1">
+            <div class="col-md-3 footer-1">
                 <div class="d-flex"><span class="mr-2"><i class="fa fa-envelope"></i></span><?php the_field('email', 'widget_' . $args['widget_id']); ?></div>
                 <div class="d-flex"><span class="mr-2"><i class="fa fa-map-marker"></i></span><?php the_field('address', 'widget_' . $args['widget_id']); ?></div>
                 <div class="d-flex"><span class="mr-2"><i class="fa fa-phone-square"></i></span><?php the_field('phone', 'widget_' . $args['widget_id']); ?></div>

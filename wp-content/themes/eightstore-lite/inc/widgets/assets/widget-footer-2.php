@@ -35,7 +35,7 @@ if(is_woocommerce_available()):
 
         public function widget($args, $instance){
             ?>
-            <div class="col-3">
+            <div class="col-md-3">
                 <div class="title"><?php the_field('title', 'widget_' . $args['widget_id']); ?></div>
                 <?php the_field('thong_tin', 'widget_' . $args['widget_id']); ?>
             </div>

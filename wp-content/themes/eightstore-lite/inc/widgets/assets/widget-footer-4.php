@@ -27,7 +27,7 @@ if(is_woocommerce_available()):
 
         public function widget($args, $instance){
             ?>
-            <div class="col-3">
+            <div class="col-md-3">
                 <?php the_field('facebook', 'widget_' . $args['widget_id']); ?>
             </div>
         <?php           
