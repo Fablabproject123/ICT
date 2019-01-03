@@ -3383,7 +3383,7 @@ a.comment-reply-link:hover, .comment-form .form-submit input#submit:hover {
 	color: #fff;
 }
 .comments-area #respond {
-	background-color: #b8b8b8;
+	background-color: #e6e3e3;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 20px;
@@ -3863,4 +3863,7 @@ p.woocommerce-result-count {
 	position: absolute;
 	right: -6px;
 	top: -6px;
+}
+.post-thumbnail img {
+	max-width: 1110px;
 }
