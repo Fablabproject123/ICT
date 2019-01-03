@@ -3858,4 +3858,9 @@ p.woocommerce-result-count {
 .cart-box a {
 	color: #fff;
 	text-decoration: none;
-} 
+}
+.onsale {
+	position: absolute;
+	right: -6px;
+	top: -6px;
+}

@@ -229,8 +229,6 @@ if (is_woocommerce_available()):
                                     XEM THÊM SẢN PHẨM
                                 </div>
                             <?php endif ?>
-                            
-
                         </div>
                     </section>
                     <script type="text/javascript">
@@ -316,7 +314,6 @@ if (is_woocommerce_available()):
                                             slidesToShow: 3,
                                             slidesToScroll: 3,
                                             infinite: true,
-                                            dots: true,
                                             adaptiveHeight: true
                                         }
                                     },
@@ -326,7 +323,6 @@ if (is_woocommerce_available()):
                                             slidesToShow: 1,
                                             slidesToScroll: 1,
                                             infinite: true,
-                                            dots: true,
                                             adaptiveHeight: true
                                         }
                                     }
