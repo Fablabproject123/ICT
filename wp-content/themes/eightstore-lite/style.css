@@ -3867,3 +3867,22 @@ p.woocommerce-result-count {
 .post-thumbnail img {
 	max-width: 1110px;
 }
+
+@media only screen and (max-width:500px) {
+
+#es-top {
+    right: 265px!important;
+	}
+}
+@media only screen and (max-width:320px) {
+
+#es-top {
+    right: 265px!important;
+	}
+}
+
+@media screen and (max-width: 720px) {
+body {
+    padding-bottom: 0;
+	}
+}
