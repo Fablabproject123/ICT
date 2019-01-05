@@ -68,7 +68,7 @@
                                 ?>
 
 
-                                <div class="col-3 right-links">
+                                <div class="col-6 col-md-3 right-links text-left text-md-right mb-3 mb-md-0">
                                     <?php if (get_theme_mod('hide_header_search') != '1') { ?>
                                         <div class="header-search">
                                             <a href="javascript:void(0)"><i class="fa fa-search"></i></a>
@@ -150,11 +150,18 @@
         </div><!-- Main Header -->
         <div class="store-menu" style="clear: both;">
             <div class="store-wrapper">
-                <nav id="site-navigation" class="main-navigation" role="navigation">
+                <nav id="site-navigation" class="main-navigation navbar navbar-expand-lg" role="navigation">
                     <div class="container">
-                        <button class="menu-toggle" aria-controls="primary-menu"
-                                aria-expanded="false"><?php esc_html_e('', 'eightstore-lite'); ?></button>
-                        <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="fa fa-align-justify"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                        <?php wp_nav_menu(array(
+                            'theme_location' => 'primary',
+                            'menu_id' => 'primary-menu',
+                            'menu_class' => 'navbar-nav',
+                        )); ?>
+                        </div>
                     </div>
                 </nav><!-- #site-navigation -->
                 <div class="clear"></div>

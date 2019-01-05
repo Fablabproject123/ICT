@@ -40,7 +40,7 @@ if (is_woocommerce_available()):
         public function widget($args, $instance)
         {
             ?>
-            <div class="col-3 header-link">
+            <div class="col-6 col-md-3 header-link mb-3 mb-md-0">
                 <div class="d-flex">
                     <div class="mr-2">
                         <span class="icon"><?php the_field('icon', 'widget_' . $args['widget_id']); ?></span>
