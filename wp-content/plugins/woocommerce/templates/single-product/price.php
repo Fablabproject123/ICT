@@ -23,9 +23,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 ?>
 
-<?php if ( $product->get_price() == 0 || empty($product->get_price()) ) : ?>
-    <div class="text-price"><?php _e( 'Liên hệ', 'eightstore-lite' ) ?></div>
-<?php else : ?>
-    <span class="price"><?php echo $price_html; ?></span>
-<?php endif; ?>
+<div class="my-3">
+    <label for=""><b>Giá:</b> </label>
+    <?php if ( $product->get_price() == 0 || empty($product->get_price()) ) : ?>
+        <div class="text"><?php _e( 'Liên hệ', 'eightstore-lite' ) ?></div>
+    <?php else : ?>
+        <span class="price"><?php echo $product->get_price_html(); ?></span>
+    <?php endif; ?>
+</div>
+
 
