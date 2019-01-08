@@ -1,0 +1,38 @@
+2019-01-06T10:19:25+00:00 CRITICAL syntax error, unexpected '<', expecting ')' in C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\header.php on line 21
+
+2019-01-06T10:20:21+00:00 CRITICAL Uncaught Error: Call to undefined function pll_the_languages() in C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\header.php:21
+Stack trace:
+#0 C:\xampp\htdocs\ICT\wp-includes\template.php(688): require_once()
+#1 C:\xampp\htdocs\ICT\wp-includes\template.php(647): load_template('C:\\xampp\\htdocs...', true)
+#2 C:\xampp\htdocs\ICT\wp-includes\general-template.php(41): locate_template(Array, true)
+#3 C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\page.php(13): get_header()
+#4 C:\xampp\htdocs\ICT\wp-includes\template-loader.php(74): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ICT\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\ICT\index.php(17): require('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\header.php on line 21
+
+2019-01-06T10:21:13+00:00 CRITICAL Uncaught Error: Call to undefined function pll_the_languages() in C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\header.php:21
+Stack trace:
+#0 C:\xampp\htdocs\ICT\wp-includes\template.php(688): require_once()
+#1 C:\xampp\htdocs\ICT\wp-includes\template.php(647): load_template('C:\\xampp\\htdocs...', true)
+#2 C:\xampp\htdocs\ICT\wp-includes\general-template.php(41): locate_template(Array, true)
+#3 C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\page.php(13): get_header()
+#4 C:\xampp\htdocs\ICT\wp-includes\template-loader.php(74): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ICT\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\ICT\index.php(17): require('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\header.php on line 21
+
+2019-01-06T10:23:11+00:00 CRITICAL Uncaught Error: Call to undefined function pll_the_languages() in C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\header.php:21
+Stack trace:
+#0 C:\xampp\htdocs\ICT\wp-includes\template.php(688): require_once()
+#1 C:\xampp\htdocs\ICT\wp-includes\template.php(647): load_template('C:\\xampp\\htdocs...', true)
+#2 C:\xampp\htdocs\ICT\wp-includes\general-template.php(41): locate_template(Array, true)
+#3 C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\template-home.php(14): get_header()
+#4 C:\xampp\htdocs\ICT\wp-includes\template-loader.php(74): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ICT\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\ICT\index.php(17): require('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\ICT\wp-content\themes\eightstore-lite\header.php on line 21
+

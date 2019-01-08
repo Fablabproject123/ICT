@@ -67,8 +67,9 @@ $classes[] = "col-md-3 product";
     <div class="collection_desc clearfix">
         <div class="title-cart">
             <a href="<?php the_permalink(); ?>" class="collection_title">
-                <h3 class="name"><?php the_title(); ?></h3>
+                <h3 class="name"><?php the_title();?><</h3>
             </a>
+
 
         </div>
         <div class="price-desc">
@@ -81,7 +82,9 @@ $classes[] = "col-md-3 product";
              */
             do_action('woocommerce_after_shop_loop_item_title');
             remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
-            ?>
+            ?>            
+
+
         </div>
     </div>
 </div>

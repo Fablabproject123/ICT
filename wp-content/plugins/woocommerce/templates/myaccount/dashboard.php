@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <p><?php
 	printf(
-		__( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">shipping and billing addresses</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' ),
+		__( 'Từ bảng điều khiển tài khoản của bạn, bạn có thể xem <a href="%1$s">đơn đặt hàng gần đây</a>, quản lý của bạn <a href="%2$s">địa chỉ giao hàng và thanh toán</a>, và <a href="%3$s">chỉnh sửa mật khẩu và chi tiết tài khoản </a>.', 'woocommerce' ),
 		esc_url( wc_get_endpoint_url( 'orders' ) ),
 		esc_url( wc_get_endpoint_url( 'edit-address' ) ),
 		esc_url( wc_get_endpoint_url( 'edit-account' ) )

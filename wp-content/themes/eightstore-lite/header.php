@@ -88,15 +88,15 @@
                                                 global $current_user;
                                                 wp_get_current_user();
                                                 ?>
-                                                <?php _e('Welcome', 'eightstore-lite') . " "; ?>
+                                                <?php _e('Xin chào', 'eightstore-lite') . " "; ?>
                                                 <a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>">
 										<span class="user-name">
 											<?php echo $current_user->display_name; ?>
 										</span>
                                                 </a>
                                                 <?php _e('!', 'eightstore-lite'); ?>
-                                                <a href="<?php echo wp_logout_url(); ?>" class="logout">
-                                                    <?php _e('Logout', 'eightstore-lite'); ?>
+                                                <a href="<?php echo wp_logout_url( home_url() ); ?>" class="logout">
+                                                    <?php _e('Đăng xuất', 'eightstore-lite'); ?>
                                                 </a>
                                                 <?php
                                             } else {
